@@ -1,0 +1,63 @@
+{
+  "available_247": "Biz 24/7 ishlaymiz",
+  "request_call": "Qo‘ng‘iroq so‘rash",
+  "when_pet_needs_help": "Uy hayvoningizga yordam kerak bo‘lsa",
+  "help_any_situation": "Har qanday holatda yordam",
+  "book_visit": "Qabulga yozilish",
+
+  "vaccination_title": "Emlash va profilaktika",
+  "vaccination_subtitle": "Faqat ishonchli va xavfsiz vaksinalar to‘liq tibbiy nazorat bilan",
+  "book_vet_consultation": "Veterinar qabuliga yozilish",
+
+  "spaying_title": "Sterilizatsiya va kastratsiya",
+  "spaying_subtitle": "Rejalashtirilgan muolajalar va operatsiyadan oldin hamda keyin hayvon holatini to‘liq nazorat qilish",
+
+  "calculate_cost": "Narxni hisoblash",
+
+  "our_services": "Bizning xizmatlar",
+  "instant_price": "Narxni tezkor hisoblash",
+
+  "diagnostics": "Diagnostika",
+  "ultrasound": "UZI",
+  "blood_tests": "Qon tahlillari",
+  "xray": "Rentgen",
+  "fast": "Tez",
+  "accurate": "Aniq",
+  "informative": "Batafsil",
+
+  "inpatient_care": "Statsionar va pet-mehmonxona",
+  "pet_hotel": "Pet-mehmonxona",
+  "care_247": "24/7 parvarish",
+  "vet_supervision": "Veterinar nazorati",
+  "around_clock": "Doimiy parvarish",
+
+  "prevention": "Profilaktika",
+  "prevention_desc": "Uy hayvoningiz sog‘lom va faol bo‘lishi uchun muntazam ko‘rik, emlash va parazitlardan himoya",
+
+  "everything_about_visit": "Tashrif haqida bilishingiz kerak bo‘lgan hamma narsa",
+  "no_rush": "Har bir qabul uy hayvoningizga qancha vaqt kerak bo‘lsa, shuncha davom etadi. Shoshilinch yo‘q. Ortiqcha rasmiyatchilik yo‘q.",
+  "book_call": "Qo‘ng‘iroq buyurtma qilish",
+
+  "contacts": "Aloqa",
+  "contact_anytime": "Istalgan vaqtda bog‘laning",
+  "address": "Manzil",
+  "working_hours": "Ish vaqti",
+  "open_247": "24/7 ochiq",
+  "call_clinic": "Klinikaga qo‘ng‘iroq qilish",
+
+  "our_specialists": "Mutaxassislarimiz",
+  "caring_professionals": "Ishonchli va mehribon mutaxassislar",
+  "consult_online": "Onlayn maslahat",
+
+  "main_services": "Asosiy xizmatlar",
+  "consultation": "Maslahat",
+  "spaying_neutering": "Sterilizatsiya / kastratsiya",
+  "vaccination": "Emlash",
+  "general_checkup": "Umumiy ko‘rik",
+  "treatment": "Barcha kasalliklarni davolash",
+  "surgery": "Jarrohlik",
+  "travel_documents": "Safar hujjatlarini tayyorlash",
+  "microchipping": "Chiplash",
+
+  "copyright": "© 2026 MyVet. Barcha huquqlar himoyalangan."
+}
