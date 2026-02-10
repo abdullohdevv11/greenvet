@@ -6,7 +6,7 @@ export default function Header() {
     const { t } = useTranslation();
 
     const handleRequestCall = () => {
-        window.open('https://t.me/myvetuz', '_blank');
+        window.open('https://t.me/ContactMyVet', '_blank');
     };
 
     return (

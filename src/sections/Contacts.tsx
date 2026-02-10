@@ -9,7 +9,7 @@ export default function Contacts() {
   const { t } = useTranslation();
 
   const handleCallClinic = () => {
-    window.open('https://t.me/myvetuz', '_blank');
+    window.open('https://t.me/ContactMyVet', '_blank');
   };
 
   const mapState = {

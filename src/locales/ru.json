@@ -33,8 +33,8 @@
   "prevention": "Профилактика",
   "prevention_desc": "Регулярные осмотры, вакцинация и защита от паразитов для здоровья и активности вашего питомца",
 
-  "everything_about_visit": "Всё, что нужно знать о клинике MyVet.uz",
-  "clinic_info_title": "Клиника MyVet.uz",
+  "everything_about_visit": "Всё, что нужно знать о нашей клинике",
+  "clinic_info_title": "Наша клиника",
   "how_spaying_performed": "Как проводится стерилизация",
   "how_neutering_performed": "Как проводится кастрация",
   "pet_hotel_facilities": "Условия зоогостиницы / Видео зоогостиницы",
@@ -69,6 +69,7 @@
   "microchipping": "Чипирование",
 
   "copyright": "© 2026 MyVet. Все права защищены.",
+  "license": "Лицензия",
 
   "price_consultation_exam": "Консультация и осмотр животного",
   "price_recheck": "Повторный осмотр",

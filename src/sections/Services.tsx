@@ -16,7 +16,7 @@ export default function Services() {
   const [selectedService, setSelectedService] = useState<string | null>(null);
 
   const handleBookCall = () => {
-    window.open('https://t.me/myvetuz', '_blank');
+    window.open('https://t.me/ContactMyVet', '_blank');
   };
 
   return (

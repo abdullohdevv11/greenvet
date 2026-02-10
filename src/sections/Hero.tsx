@@ -25,7 +25,7 @@ export default function Hero() {
   const [selectedService, setSelectedService] = useState<string | null>(null);
 
   const handleBookVisit = () => {
-    window.open('https://t.me/myvetuz', '_blank');
+    window.open('https://t.me/ContactMyVet', '_blank');
   };
 
   return (

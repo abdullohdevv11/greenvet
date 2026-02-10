@@ -34,8 +34,8 @@
   "prevention": "Profilaktika",
   "prevention_desc": "Uy hayvoningiz sog‘lom va faol bo‘lishi uchun muntazam ko‘rik, emlash va parazitlardan himoya",
 
-  "everything_about_visit": "MyVet.uz klinikasi haqida bilishingiz kerak bo'lgan barcha narsalar",
-  "clinic_info_title": "MyVet.uz Klinikasi",
+  "everything_about_visit": "Klinikamiz haqida bilishingiz kerak bo'lgan barcha narsalar",
+  "clinic_info_title": "Bizning klinika",
   "how_spaying_performed": "Sterilizatsiya qanday amalga oshiriladi",
   "how_neutering_performed": "Kastratsiya qanday amalga oshiriladi",
   "pet_hotel_facilities": "Mehmonxona sharoitlari / Mehmonxona videolari",
@@ -70,6 +70,7 @@
   "microchipping": "Chiplash",
 
   "copyright": "© 2026 MyVet. Barcha huquqlar himoyalangan.",
+  "license": "Litsenziya",
 
   "price_consultation_exam": "Консультация и осмотр животного",
   "price_recheck": "Повторный осмотр",
