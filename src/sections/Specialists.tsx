@@ -22,8 +22,8 @@ export default function Specialists() {
 
       <div className="mt-8 md:mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
         {specialists.map((doctor) => (
-          <div key={doctor.id} className="flex flex-col items-center w-full max-w-[350px]">
-            <div className="relative w-[280px] h-[280px] rounded-full bg-[#BFE0FF] flex items-end justify-center overflow-hidden mb-6 group">
+          <div key={doctor.id} className="flex flex-col items-center w-full max-w-[400px]">
+            <div className="relative w-[320px] h-[320px] rounded-full bg-[#BFE0FF] flex items-end justify-center overflow-hidden mb-8 group">
               <img 
                 src={doctor.image} 
                 alt={doctor.name}
@@ -31,15 +31,21 @@ export default function Specialists() {
               />
             </div>
 
-            <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-6 text-center">
-              {doctor.name}
+            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3 text-center">
+              {t(doctor.name)}
             </h3>
+            
+            {doctor.role && (
+              <p className="text-middleBlue font-medium text-lg md:text-xl mb-6 text-center">
+                {t(doctor.role)}
+              </p>
+            )}
 
             <div className="flex flex-wrap gap-3 w-full justify-center">
               {doctor.actions.includes('consult') && (
                 <button 
                   onClick={handleBookVisit}
-                  className="flex-1 min-w-[140px] bg-middleBlue text-white py-3 px-4 rounded-full font-medium text-sm md:text-base cursor-pointer whitespace-nowrap"
+                  className="flex-1 min-w-[160px] bg-middleBlue text-white py-4 px-6 rounded-full font-bold text-base md:text-lg cursor-pointer whitespace-nowrap"
                 >
                   {t('consult_online')}
                 </button>
@@ -48,7 +54,7 @@ export default function Specialists() {
               {doctor.actions.includes('book') && (
                 <button 
                   onClick={handleBookVisit}
-                  className="flex-1 min-w-[140px] bg-middleBlue text-white py-3 px-4 rounded-full font-medium text-sm md:text-base cursor-pointer whitespace-nowrap"
+                  className="flex-1 min-w-[160px] bg-middleBlue text-white py-4 px-6 rounded-full font-bold text-base md:text-lg cursor-pointer whitespace-nowrap"
                 >
                   {t('book_visit')}
                 </button>

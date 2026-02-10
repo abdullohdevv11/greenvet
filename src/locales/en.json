@@ -33,7 +33,7 @@
   "prevention": "Prevention",
   "prevention_desc": "Regular check-ups, vaccinations, and parasite control to keep your pet healthy and active",
 
-  "everything_about_visit": "Everything You Need to Know About Our Clinic",
+  "everything_about_visit": "Facts",
   "clinic_info_title": "Our Clinic",
   "how_spaying_performed": "How Spaying Is Performed",
   "how_neutering_performed": "How Neutering Is Performed",
@@ -103,6 +103,11 @@
   "contact_with_us": "Contact with us",
   "click": "Click",
   "rating_text": "4.9/5 from 1,200+ pet owners",
-  "trusted_clients": "Trusted by 5,000+ clients",
-  "certified_vets": "Certified veterinarians"
+  "trusted_clients": "Trusted by 7,780+ clients",
+  "certified_vets": "Certified Veterinarians",
+  "doctor_ulugbek": "Ulugbek Bakhodyrovich",
+  "doctor_laziz": "Laziz Otabekovich",
+  "doctor_nargiza": "Nargiza Akhadova",
+  "director_role": "Founder and Director",
+  "learn_more": "Learn more"
 }

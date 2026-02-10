@@ -72,12 +72,12 @@ export default function Hero() {
         <img 
             src={cat1} 
             alt="White Cat" 
-            className="absolute bottom-0 left-0 w-[120px] sm:w-[160px] md:w-[380px] object-contain z-10 translate-y-4 md:translate-y-12 -translate-x-4 md:-translate-x-8"
+            className="absolute bottom-0 left-0 w-[100px] sm:w-[140px] md:w-[320px] object-contain z-10 translate-y-2 md:translate-y-8 -translate-x-2 md:-translate-x-6"
         />
         <img 
             src={dog1} 
             alt="White Dog" 
-            className="absolute bottom-0 right-0 w-[120px] sm:w-[160px] md:w-[380px] object-contain z-10 translate-y-4 md:translate-y-12 translate-x-4 md:translate-x-8"
+            className="absolute bottom-0 right-0 w-[100px] sm:w-[140px] md:w-[320px] object-contain z-10 translate-y-2 md:translate-y-8 translate-x-2 md:translate-x-6"
         />
       </div>
 

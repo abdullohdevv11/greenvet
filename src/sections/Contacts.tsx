@@ -13,7 +13,7 @@ export default function Contacts() {
   };
 
   const mapState = {
-    center: [41.353326, 69.208154], 
+    center: [41.290110, 69.329449],
     zoom: 14,
     type: "yandex#map" as const,
   };

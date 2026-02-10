@@ -103,7 +103,7 @@ export default function ClinicInfo() {
                 className="absolute bottom-0 right-0 w-full h-auto object-contain max-h-[90%]"
              />
           </div>
-          <div className="xl:hidden mt-8 flex justify-center">
+          <div className="hidden md:flex xl:hidden mt-8 justify-center">
              <img 
                 src={catWithBall} 
                 alt="Cat with ball" 

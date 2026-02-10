@@ -1,10 +1,11 @@
-import doctor1 from '../assets/images/doctor1.png';
-import doctor2 from '../assets/images/doctor2.png';
-import doctor3 from '../assets/images/doctor3.png';
+import Ulugbek from '../assets/images/Ulugbek.png';
+import Laziz from '../assets/images/Laziz.png';
+import Nargiza from '../assets/images/Nargiza.png';
 
 export interface Specialist {
   id: number;
   name: string;
+  role?: string;
   image: string;
   actions: ('book' | 'consult')[];
 }
@@ -12,20 +13,21 @@ export interface Specialist {
 export const specialists: Specialist[] = [
   {
     id: 1,
-    name: "Улугбек Бахадырович",
-    image: doctor1,
+    name: "doctor_ulugbek",
+    image: Ulugbek,
     actions: ['book']
   },
   {
     id: 2,
-    name: "Лазиз Отабекович",
-    image: doctor2,
+    name: "doctor_laziz",
+    image: Laziz,
     actions: ['book']
   },
   {
-    id: 3,
-    name: "Отабек Исмаилович",
-    image: doctor3,
-    actions: ['consult', 'book']
+    id: 4,
+    name: "doctor_nargiza",
+    role: "director_role",
+    image: Nargiza,
+    actions: ['book']
   }
 ];

@@ -17,9 +17,9 @@ export default function Appointment() {
         <section className="px-4 mt-3 md:mt-[20px]">
             <div className="grid grid-cols-1 xl:grid-cols-2 gap-3 md:gap-[20px]">
                 <div className="bg-middleBlue rounded-[30px] md:rounded-[40px] p-5 md:p-[20px] relative overflow-hidden flex h-auto min-h-[200px] md:min-h-[220px]">
-                    <div className="relative z-10 max-w-[70%] md:max-w-[65%] flex flex-col items-start h-full">
+                    <div className="relative z-10 max-w-[80%] md:max-w-[65%] flex flex-col items-start h-full">
                         <div>
-                            <h3 className="text-white text-xl md:text-3xl lg:text-4xl font-bold font-rounded leading-tight">
+                            <h3 className="text-white text-xl md:text-3xl lg:text-4xl font-bold font-rounded leading-tight whitespace-nowrap">
                                 {t('vaccination_title')}
                             </h3>
                             <p className="text-white/80 font-rounded font-bold text-xs md:text-base mt-1">

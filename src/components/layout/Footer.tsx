@@ -3,7 +3,6 @@ import { useTranslation } from "react-i18next";
 import { createPortal } from "react-dom";
 import { X, Instagram } from "lucide-react";
 import phoneIcon from "../../assets/icons/phone.svg";
-import telegramIcon from "../../assets/icons/telegram.svg";
 import locationIcon from "../../assets/icons/location.svg";
 import clockIcon from "../../assets/icons/clock.svg";
 import qr from "../../assets/images/qr.png";
@@ -45,7 +44,7 @@ export default function Footer() {
                 >
                   {t("book_visit")}
                 </button>
-                <a href="tel:+998994425080" className="flex items-center gap-3 text-lg md:text-xl font-medium hover:opacity-80 transition-opacity">
+                <a href="tel:+998994425080" className="flex items-center gap-3 text-lg md:text-xl font-medium hover:opacity-80 transition-opacity whitespace-nowrap shrink-0">
                   <div className="bg-white/20 p-2 rounded-full hidden md:block">
                      <img src={phoneIcon} alt="phone" className="w-5 h-5 md:w-6 md:h-6 brightness-0 invert" /> 
                   </div>
@@ -70,7 +69,9 @@ export default function Footer() {
                     className="bg-white/20 p-2 rounded-full hover:bg-white/30 transition-colors flex items-center justify-center"
                     aria-label="Telegram"
                   >
-                    <img src={telegramIcon} alt="Telegram" className="w-5 h-5 md:w-6 md:h-6" />
+                    <svg viewBox="0 0 24 24" className="w-5 h-5 md:w-6 md:h-6 text-white" fill="currentColor" aria-hidden="true">
+                      <path d="M22 3.7 2.9 10.9c-.9.35-.89 1.62.02 1.95l4.7 1.75 1.8 5.5c.28.86 1.36 1.05 1.9.34l2.6-3.4 5.1 3.7c.77.56 1.86.12 2.06-.85L23 4.9c.18-.93-.7-1.72-1.6-1.2Zm-3.2 5.1-8.2 7.5c-.2.18-.52.1-.62-.15l-1.5-4.5 10.3-6.2c.3-.18.62.22.33.45Z" />
+                    </svg>
                   </a>
                 </div>
               </div>
