@@ -5,18 +5,23 @@ import catWithBall from "../assets/images/cat_with_ball.png";
 import tick from "../assets/icons/black_tick.svg"
 import white_tick from "../assets/icons/ticks.svg"
 import PriceModal from "../components/ui/PriceModal";
+import VideoModal from "../components/ui/VideoModal";
 import { prices } from "../data/prices";
+import video1 from "../assets/video/video1.mp4";
+import video2 from "../assets/video/video2.mp4";
+import { Play } from "lucide-react";
 
 export default function ClinicInfo() {
   const { t } = useTranslation();
   const [selectedService, setSelectedService] = useState<string | null>(null);
+  const [videoUrl, setVideoUrl] = useState<string | null>(null);
 
   const infoItems = [
-    "how_spaying_performed",
-    "how_neutering_performed",
-    "pet_hotel_facilities",
-    "diagnostics_lab_tests",
-    "inpatient_care_facilities",
+    { key: "how_spaying_performed" },
+    { key: "how_neutering_performed" },
+    { key: "pet_hotel_facilities", video: video1 },
+    { key: "diagnostics_lab_tests" },
+    { key: "inpatient_care_facilities", video: video2 },
   ];
 
   const services = [
@@ -38,6 +43,10 @@ export default function ClinicInfo() {
     setSelectedService(null);
   };
 
+  const handleVideoClick = (video: string) => {
+    setVideoUrl(video);
+  };
+
   return (
     <section className="mt-8 md:mt-[60px] px-4 md:px-6 mb-8 md:mb-[60px]">
       <SectionTitle title={t("everything_about_visit")} />
@@ -53,9 +62,23 @@ export default function ClinicInfo() {
                 <div className="mt-1 min-w-5">
                    <img src={tick} alt="tick" className="w-5 h-5" />
                 </div>
-                <span className="text-gray-800 font-medium text-base md:text-lg leading-tight">
-                  {t(item)}
-                </span>
+                {item.video ? (
+                  <button 
+                    onClick={() => handleVideoClick(item.video!)}
+                    className="text-left group flex items-center justify-between gap-3 bg-gray-50 hover:bg-gray-100 border border-gray-200 hover:border-middleBlue/30 rounded-xl p-2 px-3 transition-all w-full max-w-[320px]"
+                  >
+                    <span className="text-gray-800 font-medium text-sm md:text-base leading-tight">
+                      {t(item.key)}
+                    </span>
+                    <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform shrink-0">
+                      <Play className="w-4 h-4 text-middleBlue fill-current ml-0.5" />
+                    </div>
+                  </button>
+                ) : (
+                  <span className="text-gray-800 font-medium text-base md:text-lg leading-tight py-1">
+                    {t(item.key)}
+                  </span>
+                )}
               </li>
             ))}
           </ul>
@@ -118,6 +141,11 @@ export default function ClinicInfo() {
         onClose={handleCloseModal}
         title={selectedService || ''}
         items={selectedService ? prices[selectedService] || [] : []}
+      />
+      <VideoModal
+        isOpen={!!videoUrl}
+        onClose={() => setVideoUrl(null)}
+        videoSrc={videoUrl}
       />
     </section>
   );

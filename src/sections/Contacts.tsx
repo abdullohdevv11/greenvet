@@ -8,12 +8,8 @@ import phoneIcon from "../assets/icons/phone.svg";
 export default function Contacts() {
   const { t } = useTranslation();
 
-  const handleCallClinic = () => {
-    window.open('https://t.me/ContactMyVet', '_blank');
-  };
-
   const mapState = {
-    center: [41.290110, 69.329449],
+    center: [41.298463, 69.338361],
     zoom: 14,
     type: "yandex#map" as const,
   };
@@ -75,13 +71,13 @@ export default function Contacts() {
               <p className="text-gray-600 mb-6 text-sm md:text-base leading-relaxed">
                 {t("contact_description")}
               </p>
-              <button 
-                onClick={handleCallClinic}
+              <a 
+                href="tel:+998994425080"
                 className="bg-middleBlue text-white py-3 px-6 rounded-full flex items-center justify-center gap-2 font-medium cursor-pointer hover:bg-opacity-90 transition-opacity"
               >
                 {t("call_clinic")}
                 <img src={phoneIcon} alt="phone" className="w-5 h-5 brightness-0 invert" />
-              </button>
+              </a>
             </div>
           </div>
         </div>

@@ -69,8 +69,8 @@ export default function Footer() {
                     className="bg-white/20 p-2 rounded-full hover:bg-white/30 transition-colors flex items-center justify-center"
                     aria-label="Telegram"
                   >
-                    <svg viewBox="0 0 24 24" className="w-5 h-5 md:w-6 md:h-6 text-white" fill="currentColor" aria-hidden="true">
-                      <path d="M22 3.7 2.9 10.9c-.9.35-.89 1.62.02 1.95l4.7 1.75 1.8 5.5c.28.86 1.36 1.05 1.9.34l2.6-3.4 5.1 3.7c.77.56 1.86.12 2.06-.85L23 4.9c.18-.93-.7-1.72-1.6-1.2Zm-3.2 5.1-8.2 7.5c-.2.18-.52.1-.62-.15l-1.5-4.5 10.3-6.2c.3-.18.62.22.33.45Z" />
+                    <svg viewBox="0 0 24 24" className="w-5 h-5 md:w-6 md:h-6 text-white" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20.665 3.717L2.935 10.554C2.044 10.908 2.051 11.405 2.775 11.626L7.327 13.046L17.859 6.401C18.357 6.098 18.815 6.262 18.441 6.595L9.907 14.296L9.882 14.293L9.593 18.985C10.016 18.985 10.203 18.793 10.439 18.567L13.211 15.875L17.81 19.272C18.658 19.739 19.268 19.5 19.479 18.489L22.498 4.261C22.807 3.022 22.025 2.458 20.665 3.717Z" fill="currentColor" />
                     </svg>
                   </a>
                 </div>

@@ -63,18 +63,6 @@ export default function Services() {
               <img src={black_tick} alt="tick" className="w-5 h-5 md:w-6 md:h-6" />
               {t('xray')}
             </li>
-            <li className="flex items-center gap-3">
-              <img src={black_tick} alt="tick" className="w-5 h-5 md:w-6 md:h-6" />
-              {t('fast')}
-            </li>
-            <li className="flex items-center gap-3">
-              <img src={black_tick} alt="tick" className="w-5 h-5 md:w-6 md:h-6" />
-              {t('accurate')}
-            </li>
-            <li className="flex items-center gap-3">
-              <img src={black_tick} alt="tick" className="w-5 h-5 md:w-6 md:h-6" />
-              {t('informative')}
-            </li>
           </ul>
           <button 
             onClick={() => window.open('https://t.me/myvetuz', '_blank')}
