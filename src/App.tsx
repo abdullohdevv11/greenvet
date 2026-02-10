@@ -30,8 +30,8 @@ function App() {
       <Appointment/>
       <Services/>
       <Contacts/>
-      <Specialists/>
       <ClinicInfo/>
+      <Specialists/>
       <Footer/>
     </div>
   )

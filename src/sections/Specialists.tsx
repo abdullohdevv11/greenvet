@@ -56,7 +56,7 @@ export default function Specialists() {
                   onClick={handleBookVisit}
                   className="flex-1 min-w-[160px] bg-middleBlue text-white py-4 px-6 rounded-full font-bold text-base md:text-lg cursor-pointer whitespace-nowrap"
                 >
-                  {t('book_visit')}
+                  {doctor.role === 'director_role' ? t('leave_review') : t('book_visit')}
                 </button>
               )}
             </div>

@@ -11,6 +11,22 @@ import SectionTitle from '../components/ui/SectionTitle';
 import PriceModal from '../components/ui/PriceModal';
 import { prices } from '../data/prices';
 
+const TelegramIcon = ({ className }: { className?: string }) => (
+  <svg 
+    width="24" 
+    height="24" 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    xmlns="http://www.w3.org/2000/svg"
+    className={className}
+  >
+    <path 
+      d="M20.665 3.717L2.935 10.554C2.044 10.908 2.051 11.405 2.775 11.626L7.327 13.046L17.859 6.401C18.357 6.098 18.815 6.262 18.441 6.595L9.907 14.296L9.882 14.293L9.593 18.985C10.016 18.985 10.203 18.793 10.439 18.567L13.211 15.875L17.81 19.272C18.658 19.739 19.268 19.5 19.479 18.489L22.498 4.261C22.807 3.022 22.025 2.458 20.665 3.717Z" 
+      fill="currentColor"
+    />
+  </svg>
+);
+
 export default function Services() {
   const { t } = useTranslation();
   const [selectedService, setSelectedService] = useState<string | null>(null);
@@ -62,9 +78,10 @@ export default function Services() {
           </ul>
           <button 
             onClick={() => window.open('https://t.me/myvetuz', '_blank')}
-            className="mt-auto self-start bg-middleBlue text-white font-bold font-poppins py-2 px-6 md:py-3 md:px-8 text-xs md:text-base rounded-full cursor-pointer hover:bg-opacity-90 transition-opacity z-10"
+            className="mt-auto self-start bg-middleBlue text-white font-bold font-poppins py-2 px-6 md:py-3 md:px-8 text-xs md:text-base rounded-full cursor-pointer hover:bg-opacity-90 transition-opacity z-10 flex items-center gap-2"
           >
             {t('learn_more')}
+            <TelegramIcon className="w-4 h-4 md:w-5 md:h-5" />
           </button>
           <div className="absolute bottom-10 right-10 w-[150px] md:w-[372px] h-[150px] md:h-[250px] bg-darkBlue rounded-full blur-[40px] md:blur-[60px] opacity-30 z-0"></div>
           <img
@@ -102,9 +119,10 @@ export default function Services() {
 
             <button 
                 onClick={() => window.open('https://t.me/myvetuz', '_blank')}
-                className="mt-auto self-start bg-white text-middleBlue font-bold font-poppins py-2 px-6 md:py-3 md:px-8 text-xs md:text-base rounded-full cursor-pointer hover:bg-opacity-90 transition-opacity z-10"
+                className="mt-auto self-start bg-white text-middleBlue font-bold font-poppins py-2 px-6 md:py-3 md:px-8 text-xs md:text-base rounded-full cursor-pointer hover:bg-opacity-90 transition-opacity z-10 flex items-center gap-2"
             >
                 {t('learn_more')}
+                <TelegramIcon className="w-4 h-4 md:w-5 md:h-5" />
             </button>
 
             <div className="absolute right-6 bottom-0 w-32 h-32 md:w-40 md:h-40 opacity-20">
@@ -123,9 +141,10 @@ export default function Services() {
             
             <button 
                 onClick={() => window.open('https://t.me/myvetuz', '_blank')}
-                className="mt-auto self-start bg-white text-middleBlue font-bold font-poppins py-2 px-6 md:py-3 md:px-8 text-xs md:text-base rounded-full cursor-pointer hover:bg-opacity-90 transition-opacity z-10"
+                className="mt-auto self-start bg-white text-middleBlue font-bold font-poppins py-2 px-6 md:py-3 md:px-8 text-xs md:text-base rounded-full cursor-pointer hover:bg-opacity-90 transition-opacity z-10 flex items-center gap-2"
             >
                 {t('learn_more')}
+                <TelegramIcon className="w-4 h-4 md:w-5 md:h-5" />
             </button>
 
             <img src={dog_with_cat} alt="dog" className="absolute bottom-0 right-4 md:right-6 w-[80px] md:w-[140px] object-contain z-0" />
