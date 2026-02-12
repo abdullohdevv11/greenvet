@@ -29,9 +29,9 @@ function App() {
       <Hero />
       <Appointment/>
       <Services/>
-      <Contacts/>
-      <ClinicInfo/>
       <Specialists/>
+      <ClinicInfo/>
+      <Contacts/>
       <Footer/>
     </div>
   )

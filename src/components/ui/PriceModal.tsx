@@ -69,12 +69,6 @@ export default function PriceModal({ isOpen, onClose, title, items }: PriceModal
                     <span className="font-medium text-gray-700 text-sm md:text-base">
                       {t(item.name)}
                     </span>
-                    <span className="font-bold text-middleBlue text-sm md:text-base whitespace-nowrap">
-                      {item.isFrom 
-                        ? t('formatted_price_from', { price: item.price }) 
-                        : t('formatted_price', { price: item.price })
-                      }
-                    </span>
                   </div>
                 ))
               ) : (

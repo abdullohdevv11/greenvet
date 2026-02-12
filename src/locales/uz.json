@@ -12,7 +12,7 @@
   "spaying_title": "Sterilizatsiya va\u00A0kastratsiya",
   "spaying_subtitle": "Rejalashtirilgan muolajalar va\u00A0operatsiyadan oldin hamda keyin hayvon holatini to‘liq nazorat qilish",
 
-  "calculate_cost": "Narxni hisoblash",
+  "calculate_cost": "Batafsil",
 
   "our_services": "Bizning xizmatlar",
   "instant_price": "Narxni tezkor hisoblash",
@@ -35,12 +35,14 @@
   "prevention_desc": "Uy hayvoningiz sog‘lom va\u00A0faol bo‘lishi uchun muntazam ko‘rik, emlash va\u00A0parazitlardan himoya",
 
   "everything_about_visit": "Faktlar",
+  "useful_information": "Foydali ma'lumotlar",
+  "all_services": "Barcha xizmatlar",
   "clinic_info_title": "Bizning klinika",
-  "how_spaying_performed": "Sterilizatsiya qanday amalga oshiriladi",
-  "how_neutering_performed": "Kastratsiya qanday amalga oshiriladi",
-  "pet_hotel_facilities": "Mehmonxona sharoitlari / Mehmonxona videolari",
-  "diagnostics_lab_tests": "Diagnostika va\u00A0laboratoriya tahlillari",
-  "inpatient_care_facilities": "Statsionar sharoitlari / Kasalxona bo'limi",
+  "how_castration_performed": "Kastratsiya qanday amalga oshiriladi",
+  "how_reception_performed": "Qabul qanday o'tadi",
+  "how_vets_work": "Veterinarlar qanday ishlaydi",
+  "faq_answers": "Ko'p beriladigan savollarga javoblar",
+  "round_clock_reception": "24/7 qabul",
   "comprehensive_care": "Uy hayvoningiz salomatligi, qulayligi va\u00A0farovonligi uchun har tomonlama g'amxo'rlik.",
 
   "no_rush": "Har bir qabul uy hayvoningizga qancha vaqt kerak bo‘lsa, shuncha davom etadi. Shoshilinch yo‘q. Ortiqcha rasmiyatchilik yo‘q.",
@@ -107,9 +109,13 @@
   "trusted_clients": "7,780+ mijozlar ishonchi",
   "certified_vets": "Sertifikatlangan veterinarlar",
   "doctor_ulugbek": "Ulug'bek Bahodirovich",
+  "doctor_ulugbek_role": "Bosh shifokor, jarroh",
   "doctor_laziz": "Laziz Otabekovich",
+  "doctor_laziz_role": "Bosh shifokor o'rinbosari, jarroh",
   "doctor_nargiza": "Nargiza Ahadova",
   "director_role": "Ta'sischi va direktor",
   "learn_more": "Batafsil ma'lumot",
-  "leave_review": "O'yib yozing"
+  "leave_review": "O'yib yozing",
+  "reviews": "Sharhlar",
+  "read_reviews": "Sharhlarni o'qish"
 }

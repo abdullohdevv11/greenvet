@@ -43,7 +43,7 @@ export default function VideoModal({ isOpen, onClose, videoSrc }: VideoModalProp
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="relative z-10 w-full max-w-4xl aspect-video bg-black rounded-[20px] overflow-hidden shadow-2xl"
+            className="relative z-10 w-full max-w-[95vw] md:max-w-[90vw] xl:max-w-[80vw] aspect-video bg-black rounded-[20px] overflow-hidden shadow-2xl"
           >
              <button 
                 onClick={onClose}

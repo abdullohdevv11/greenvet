@@ -77,8 +77,6 @@ export default function Footer() {
               </div>
               
               <div className="bg-white text-gray-900 rounded-[20px] md:rounded-[30px] p-4 md:p-6 flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-12 w-full md:w-auto md:max-w-fit">
-                <img src={qr} alt="QR Code" className="w-20 h-20 md:w-24 md:h-24 object-contain" />
-                
                 <div className="flex flex-col gap-4 md:flex-row md:gap-12">
                   <div className="space-y-1">
                     <div className="flex items-center gap-2 font-bold text-lg">

@@ -2,13 +2,15 @@ import SectionTitle from "../components/ui/SectionTitle";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
 import catWithBall from "../assets/images/cat_with_ball.png";
-import tick from "../assets/icons/black_tick.svg"
 import white_tick from "../assets/icons/ticks.svg"
 import PriceModal from "../components/ui/PriceModal";
 import VideoModal from "../components/ui/VideoModal";
 import { prices } from "../data/prices";
-import video1 from "../assets/video/video1.mp4";
-import video2 from "../assets/video/video2.mp4";
+import answersVideo from "../assets/video/answers_on_questions.mp4";
+import workersVideo from "../assets/video/how_work_workers.mp4";
+import castrationVideo from "../assets/video/кастрация.mp4";
+import roundClockVideo from "../assets/video/круглосуточный.mp4";
+import receptionVideo from "../assets/video/приём.mp4";
 import { Play } from "lucide-react";
 
 export default function ClinicInfo() {
@@ -17,11 +19,11 @@ export default function ClinicInfo() {
   const [videoUrl, setVideoUrl] = useState<string | null>(null);
 
   const infoItems = [
-    { key: "how_spaying_performed" },
-    { key: "how_neutering_performed" },
-    { key: "pet_hotel_facilities", video: video1 },
-    { key: "diagnostics_lab_tests" },
-    { key: "inpatient_care_facilities", video: video2 },
+    { key: "how_castration_performed", video: castrationVideo },
+    { key: "how_reception_performed", video: receptionVideo },
+    { key: "how_vets_work", video: workersVideo },
+    { key: "faq_answers", video: answersVideo },
+    { key: "round_clock_reception", video: roundClockVideo },
   ];
 
   const services = [
@@ -49,36 +51,27 @@ export default function ClinicInfo() {
 
   return (
     <section className="mt-8 md:mt-[60px] px-4 md:px-6 mb-8 md:mb-[60px]">
-      <SectionTitle title={t("everything_about_visit")} />
+      <SectionTitle title={t("useful_information")} />
 
       <div className="mt-6 md:mt-8 flex flex-col xl:flex-row gap-6">
         <div className="w-full xl:w-1/3 bg-white border border-middleBlue rounded-[30px] md:rounded-[40px] p-6 md:p-8 flex flex-col relative overflow-hidden">
           <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
             {t("clinic_info_title")}
           </h3>
-          <ul className="space-y-4 relative z-10">
+          <ul className="space-y-3 relative z-10">
             {infoItems.map((item, index) => (
-              <li key={index} className="flex items-start gap-3">
-                <div className="mt-1 min-w-5">
-                   <img src={tick} alt="tick" className="w-5 h-5" />
-                </div>
-                {item.video ? (
-                  <button 
-                    onClick={() => handleVideoClick(item.video!)}
-                    className="text-left group flex items-center justify-between gap-3 bg-gray-50 hover:bg-gray-100 border border-gray-200 hover:border-middleBlue/30 rounded-xl p-2 px-3 transition-all w-full max-w-[320px]"
-                  >
-                    <span className="text-gray-800 font-medium text-sm md:text-base leading-tight">
-                      {t(item.key)}
-                    </span>
-                    <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform shrink-0">
-                      <Play className="w-4 h-4 text-middleBlue fill-current ml-0.5" />
-                    </div>
-                  </button>
-                ) : (
-                  <span className="text-gray-800 font-medium text-base md:text-lg leading-tight py-1">
+              <li key={index} className="w-full">
+                <button 
+                  onClick={() => handleVideoClick(item.video!)}
+                  className="group w-full flex items-center gap-4 bg-white border border-gray-200 rounded-2xl p-3 md:p-4"
+                >
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-middleBlue/10 flex items-center justify-center shrink-0">
+                    <Play className="w-4 h-4 md:w-5 md:h-5 text-middleBlue fill-current ml-1" />
+                  </div>
+                  <span className="text-left text-gray-800 font-bold text-sm md:text-lg leading-tight flex-1">
                     {t(item.key)}
                   </span>
-                )}
+                </button>
               </li>
             ))}
           </ul>
@@ -91,7 +84,7 @@ export default function ClinicInfo() {
         <div className="w-full xl:w-2/3 bg-middleBlue rounded-[30px] md:rounded-[40px] p-5 md:p-[30px] relative overflow-hidden flex flex-col">
           <div className="relative z-10 w-full xl:w-2/3">
             <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
-              {t("our_services")}
+              {t("all_services")}
             </h3>
             <p className="text-white/90 text-base md:text-lg mb-6 md:mb-8 font-medium">
               {t("comprehensive_care")}

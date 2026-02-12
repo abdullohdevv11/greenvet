@@ -14,12 +14,14 @@ export const specialists: Specialist[] = [
   {
     id: 1,
     name: "doctor_ulugbek",
+    role: "doctor_ulugbek_role",
     image: Ulugbek,
     actions: ['book']
   },
   {
     id: 2,
     name: "doctor_laziz",
+    role: "doctor_laziz_role",
     image: Laziz,
     actions: ['book']
   },

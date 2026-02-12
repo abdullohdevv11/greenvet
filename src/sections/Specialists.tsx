@@ -53,7 +53,13 @@ export default function Specialists() {
               
               {doctor.actions.includes('book') && (
                 <button 
-                  onClick={handleBookVisit}
+                  onClick={() => {
+                    if (doctor.role === 'director_role') {
+                      window.open('https://yandex.ru/maps/org/93506518218/?add-review=true', '_blank');
+                    } else {
+                      handleBookVisit();
+                    }
+                  }}
                   className="flex-1 min-w-[160px] bg-middleBlue text-white py-4 px-6 rounded-full font-bold text-base md:text-lg cursor-pointer whitespace-nowrap"
                 >
                   {doctor.role === 'director_role' ? t('leave_review') : t('book_visit')}

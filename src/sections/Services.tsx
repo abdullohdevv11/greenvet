@@ -9,6 +9,7 @@ import blue_icon from '../assets/icons/blue_icon.svg';
 import black_tick from '../assets/icons/black_tick.svg';
 import SectionTitle from '../components/ui/SectionTitle';
 import PriceModal from '../components/ui/PriceModal';
+import ReviewsModal from '../components/ui/ReviewsModal';
 import { prices } from '../data/prices';
 
 const TelegramIcon = ({ className }: { className?: string }) => (
@@ -30,10 +31,7 @@ const TelegramIcon = ({ className }: { className?: string }) => (
 export default function Services() {
   const { t } = useTranslation();
   const [selectedService, setSelectedService] = useState<string | null>(null);
-
-  const handleBookCall = () => {
-    window.open('https://t.me/ContactMyVet', '_blank');
-  };
+  const [isReviewsModalOpen, setIsReviewsModalOpen] = useState(false);
 
   return (
     <section className="mt-8 md:mt-[60px] px-4 md:px-6">
@@ -164,10 +162,10 @@ export default function Services() {
             </li>
           </ul>
           <button 
-            onClick={handleBookCall}
+            onClick={() => setIsReviewsModalOpen(true)}
             className="mt-auto bg-middleBlue text-white font-rounded font-bold text-sm md:text-base py-3 px-6 md:px-8 rounded-full w-fit relative z-10 cursor-pointer hover:bg-opacity-90 transition-opacity"
           >
-            {t('book_call')}
+            {t('read_reviews')}
           </button>
           <div className="absolute bottom-10 right-10 w-[150px] md:w-[200px] h-[150px] md:h-[175px] bg-darkBlue rounded-full blur-[40px] md:blur-[60px] opacity-30 z-0"></div>
           <img src={dog} alt="dog" className="absolute bottom-[-10px] right-[-10px] md:right-0 md:bottom-[-24px] w-[140px] md:w-[300px] object-contain z-0" />
@@ -179,6 +177,10 @@ export default function Services() {
         onClose={() => setSelectedService(null)}
         title={selectedService || ''}
         items={selectedService ? prices[selectedService] || [] : []}
+      />
+      <ReviewsModal
+        isOpen={isReviewsModalOpen}
+        onClose={() => setIsReviewsModalOpen(false)}
       />
     </section>
   );

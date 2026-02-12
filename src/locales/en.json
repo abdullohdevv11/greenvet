@@ -9,10 +9,10 @@
   "vaccination_subtitle": "Only trusted and safe vaccines with full medical support",
   "book_vet_consultation": "Book a vet consultation",
 
-  "spaying_title": "Spaying & Neutering",
-  "spaying_subtitle": "Scheduled Procedures Full Monitoring of Your Pet’s Condition Before and After the Procedure",
+  "spaying_title": "Spaying and Neutering",
+  "spaying_subtitle": "Scheduled procedures with full monitoring of the pet's condition before and after surgery",
 
-  "calculate_cost": "Calculate cost",
+  "calculate_cost": "Learn more",
 
   "our_services": "Our Services",
   "instant_price": "Get an instant price estimate",
@@ -34,12 +34,14 @@
   "prevention_desc": "Regular check-ups, vaccinations, and parasite control to keep your pet healthy and active",
 
   "everything_about_visit": "Facts",
+  "useful_information": "Useful Information",
+  "all_services": "All Services",
   "clinic_info_title": "Our Clinic",
-  "how_spaying_performed": "How Spaying Is Performed",
-  "how_neutering_performed": "How Neutering Is Performed",
-  "pet_hotel_facilities": "Pet Hotel Facilities / Pet Hotel Footage",
-  "diagnostics_lab_tests": "Diagnostics and Laboratory Tests",
-  "inpatient_care_facilities": "Inpatient Care Facilities / Hospital Ward",
+  "how_castration_performed": "How castration is performed",
+  "how_reception_performed": "How the appointment goes",
+  "how_vets_work": "How veterinarians work",
+  "faq_answers": "Answers to frequently asked questions",
+  "round_clock_reception": "24/7 Reception",
   "comprehensive_care": "Comprehensive care for your pet’s health, comfort, and wellbeing.",
 
   "no_rush": "Each appointment takes exactly as much time as your pet needs. No rush. No formalities.",
@@ -106,9 +108,13 @@
   "trusted_clients": "Trusted by 7,780+ clients",
   "certified_vets": "Certified Veterinarians",
   "doctor_ulugbek": "Ulugbek Bakhodyrovich",
+  "doctor_ulugbek_role": "Chief Physician, Surgeon",
   "doctor_laziz": "Laziz Otabekovich",
+  "doctor_laziz_role": "Deputy Chief Physician, Surgeon",
   "doctor_nargiza": "Nargiza Akhadova",
   "director_role": "Founder and Director",
   "learn_more": "Learn more",
-  "leave_review": "Leave a review"
+  "leave_review": "Leave a review",
+  "reviews": "Reviews",
+  "read_reviews": "Read reviews"
 }
