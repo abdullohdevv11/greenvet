@@ -5,7 +5,6 @@ import { X, Instagram } from "lucide-react";
 import phoneIcon from "../../assets/icons/phone.svg";
 import locationIcon from "../../assets/icons/location.svg";
 import clockIcon from "../../assets/icons/clock.svg";
-import qr from "../../assets/images/qr.png";
 import heartFooter from "../../assets/images/headrt_footer.png";
 import feet from "../../assets/images/feet.png";
 import licenseImg from "../../assets/images/license.png";
