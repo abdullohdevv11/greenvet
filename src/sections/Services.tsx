@@ -79,12 +79,6 @@ export default function Services() {
 
         <div className="flex flex-col gap-4 md:gap-6">
           <div className="relative overflow-hidden rounded-[30px] bg-gradient-to-br from-middleBlue to-[#ABC5FD] p-6 text-white min-h-[220px] md:min-h-[300px] flex flex-col">
-            <button 
-              onClick={() => setSelectedService('inpatient_care')}
-              className="absolute top-6 right-6 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white flex items-center justify-center cursor-pointer z-20"
-            >
-              <img src={arrow} alt="arrow" className="w-4 h-4 md:w-5 md:h-5" />
-            </button>
             <h3 className="text-xl md:text-[30px] font-bold font-rounded leading-tight">
               {t('inpatient_care')}
             </h3>
