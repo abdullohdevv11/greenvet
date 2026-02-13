@@ -12,6 +12,7 @@ export default function Contacts() {
     center: [41.298463, 69.338361],
     zoom: 14,
     type: "yandex#map" as const,
+    behaviors: ["default", "scrollZoom"],
   };
 
   return (
@@ -19,7 +20,13 @@ export default function Contacts() {
       <SectionTitle title={t("contacts")} subtitle={t("contact_anytime")} />
 
       <div className="mt-8 flex flex-col xl:flex-row gap-6">
-        <div className="w-full xl:w-1/2 h-[300px] md:h-[400px] xl:h-auto min-h-[300px] md:min-h-[400px] rounded-[30px] overflow-hidden border border-blue-100 relative z-0">
+        <div
+          className="hidden md:block w-full xl:w-1/2 h-[300px] md:h-[400px] xl:h-auto min-h-[300px] md:min-h-[400px] rounded-[30px] overflow-hidden border border-blue-100 relative z-0"
+          onWheel={(event) => {
+            event.preventDefault();
+            event.stopPropagation();
+          }}
+        >
           <YMaps>
             <Map
               defaultState={mapState}
@@ -59,12 +66,26 @@ export default function Contacts() {
                 className="w-full h-auto object-cover rounded-xl"
               />
             </div>
-            <div className="w-full md:hidden mb-4">
-              <img
-                src={hospitalImg}
-                alt="Hospital"
-                className="w-full h-[150px] object-cover rounded-xl"
-              />
+            
+            <div
+              className="w-full md:hidden mb-4 h-[200px] rounded-xl overflow-hidden relative z-0 border border-blue-100"
+              onWheel={(event) => {
+                event.preventDefault();
+                event.stopPropagation();
+              }}
+            >
+              <YMaps>
+                <Map
+                  defaultState={mapState}
+                  width="100%"
+                  height="100%"
+                  options={{
+                    suppressMapOpenBlock: true, 
+                  }}
+                >
+                  <Placemark geometry={mapState.center} />
+                </Map>
+              </YMaps>
             </div>
 
             <div className="w-full md:w-7/12 flex flex-col pb-2">

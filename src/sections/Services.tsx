@@ -35,7 +35,7 @@ export default function Services() {
 
   return (
     <section className="mt-8 md:mt-[60px] px-4 md:px-6">
-      <SectionTitle title={t('our_services')} subtitle={t('instant_price')} />
+      <SectionTitle title={t('our_services')} />
 
       <div className="grid grid-cols-1 xl:grid-cols-[1.2fr_1fr_1fr] gap-4 md:gap-[20px] mt-6">
         <div className="relative overflow-hidden rounded-[30px] border border-darkBlue bg-white p-6 md:p-8 min-h-[350px] md:min-h-[400px] xl:min-h-[500px] flex flex-col">

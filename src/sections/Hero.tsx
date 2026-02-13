@@ -7,6 +7,7 @@ import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
 import PriceModal from '../components/ui/PriceModal';
 import { prices } from '../data/prices';
+import logo_text from "../assets/icons/logo_text.svg"
 
 const Sparkle = ({ className }: { className?: string }) => (
   <svg 
@@ -51,10 +52,12 @@ export default function Hero() {
              <h1 className="text-white text-2xl sm:text-3xl md:text-5xl font-bold font-poppins tracking-wide leading-tight">
                {t('when_pet_needs_help')}
              </h1>
-             <h2 className="text-darkBlue text-4xl sm:text-5xl md:text-7xl font-shantell font-bold mt-1 md:mt-[-5px]">
-               MyVet.uz
-             </h2>
-             <p className="text-white text-base sm:text-lg md:text-3xl font-poppins font-semibold tracking-wide mt-2">
+               <img 
+                 src={logo_text} 
+                 alt="" 
+                 className="w-56 sm:w-64 md:w-80"
+               />
+             <p className="text-white text-base sm:text-lg md:text-3xl font-poppins font-semibold tracking-wide">
                {t('help_any_situation')}
              </p>
            </div>
