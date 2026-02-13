@@ -48,8 +48,8 @@ export default function Hero() {
              <img src={logo_vertical} alt="Pets" className="h-[140px] sm:h-[180px] md:h-[220px] 2xl:h-[280px] object-contain" />
            </div>
 
-           <div className="text-center -mt-2 md:-mt-4 flex flex-col items-center relative z-20 px-4">
-             <h1 className="text-white text-2xl sm:text-3xl md:text-4xl 2xl:text-5xl font-bold font-poppins tracking-wide leading-tight">
+           <div className="text-center -mt-2 md:-mt-4 flex flex-col items-center relative z-20 px-4 gap-2 md:gap-3">
+             <h1 className="text-white  text-2xl sm:text-3xl md:text-4xl 2xl:text-5xl font-bold font-poppins tracking-wide leading-tight">
                {t('when_pet_needs_help')}
              </h1>
                <img 
