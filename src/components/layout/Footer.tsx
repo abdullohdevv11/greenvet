@@ -53,7 +53,7 @@ export default function Footer() {
 
                 <div className="flex items-center gap-3 mt-2 sm:mt-0">
                   <a 
-                    href="https://www.instagram.com/p/B_SFawJJtfM/" 
+                    href="https://www.instagram.com/myvet.uz/" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="bg-white/20 p-2 rounded-full hover:bg-white/30 transition-colors flex items-center justify-center"
