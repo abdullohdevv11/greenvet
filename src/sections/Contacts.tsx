@@ -41,16 +41,26 @@ export default function Contacts() {
 
           <div className="w-full xl:w-1/2 bg-white rounded-[30px] border border-blue-200 p-5 md:p-6 flex flex-col justify-between">
             <div>
-              <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-gray-900">{t("address")}</h3>
+              <h3 className="hidden md:block text-xl md:text-2xl font-bold mb-4 md:mb-6 text-gray-900">{t("address")}</h3>
 
-              <div className="bg-middleBlue text-white rounded-full py-3 px-4 md:px-6 flex items-center gap-3 mb-3 md:mb-4 w-full">
+              {/* Mobile Address */}
+              <div className="md:hidden flex items-start gap-3 mb-6 w-full">
+                <img src={locationIcon} alt="location" className="w-5 h-5 mt-0.5 shrink-0" />
+                <span className="font-medium text-sm text-gray-900 leading-tight">
+                  г. Ташкент, Яшнабадский район, ул. Чигил, 32А
+                </span>
+              </div>
+
+              {/* Desktop Address */}
+              <div className="hidden md:flex bg-middleBlue text-white rounded-full py-3 px-4 md:px-6 items-center gap-3 mb-3 md:mb-4 w-full">
                 <img src={locationIcon} alt="location" className="w-5 h-5 md:w-6 md:h-6 brightness-0 invert shrink-0" />
                 <span className="font-medium text-xs md:text-base truncate">
                   {t("clinic_address")}
                 </span>
               </div>
 
-              <div className="bg-middleBlue text-white rounded-full py-3 px-4 md:px-6 flex items-center gap-3 mb-6 md:mb-8 w-full">
+              {/* Phone - Desktop only */}
+              <div className="hidden md:flex bg-middleBlue text-white rounded-full py-3 px-4 md:px-6 items-center gap-3 mb-6 md:mb-8 w-full">
                 <img src={phoneIcon} alt="phone" className="w-5 h-5 md:w-6 md:h-6 brightness-0 invert shrink-0" />
                 <span className="font-medium text-xs md:text-base">+998 99 442 50 80</span>
               </div>
