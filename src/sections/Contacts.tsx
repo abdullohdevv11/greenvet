@@ -20,17 +20,19 @@ export default function Contacts() {
       <SectionTitle title={t("contacts")} subtitle={t("contact_anytime")} />
 
       <YMaps query={{ lang: "ru_RU" }}>
-        <div className="mt-8 flex flex-col xl:flex-row xl:items-start gap-6">
+        <div className="mt-8 flex flex-col xl:flex-row gap-6">
           <div
             className="hidden md:block w-full xl:w-1/2 h-[300px] md:h-[400px] xl:h-auto min-h-[300px] md:min-h-[400px] rounded-[30px] overflow-hidden border border-blue-100 relative z-0"
-            data-lenis-prevent
+            onWheel={(event) => {
+              event.stopPropagation();
+            }}
           >
             <Map
               defaultState={mapState}
               width="100%"
               height="100%"
               options={{
-                suppressMapOpenBlock: true, 
+                suppressMapOpenBlock: true,
               }}
             >
               <Placemark geometry={mapState.center} />
@@ -65,14 +67,16 @@ export default function Contacts() {
               
               <div
                 className="w-full md:hidden mb-4 h-[200px] rounded-xl overflow-hidden relative z-0 border border-blue-100"
-                data-lenis-prevent
+                onWheel={(event) => {
+                  event.stopPropagation();
+                }}
               >
                 <Map
                   defaultState={mapState}
                   width="100%"
                   height="100%"
                   options={{
-                    suppressMapOpenBlock: true, 
+                    suppressMapOpenBlock: true,
                   }}
                 >
                   <Placemark geometry={mapState.center} />
