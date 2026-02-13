@@ -19,15 +19,15 @@ export default function Contacts() {
     <section className="mt-8 md:mt-[60px] px-4 md:px-6 mb-8 md:mb-[60px]">
       <SectionTitle title={t("contacts")} subtitle={t("contact_anytime")} />
 
-      <div className="mt-8 flex flex-col xl:flex-row gap-6">
-        <div
-          className="hidden md:block w-full xl:w-1/2 h-[300px] md:h-[400px] xl:h-auto min-h-[300px] md:min-h-[400px] rounded-[30px] overflow-hidden border border-blue-100 relative z-0"
-          onWheel={(event) => {
-            event.preventDefault();
-            event.stopPropagation();
-          }}
-        >
-          <YMaps>
+      <YMaps query={{ lang: "ru_RU" }}>
+        <div className="mt-8 flex flex-col xl:flex-row gap-6">
+          <div
+            className="hidden md:block w-full xl:w-1/2 h-[300px] md:h-[400px] xl:h-auto min-h-[300px] md:min-h-[400px] rounded-[30px] overflow-hidden border border-blue-100 relative z-0"
+            // onWheel={(event) => {
+            //   event.preventDefault();
+            //   event.stopPropagation();
+            // }}
+          >
             <Map
               defaultState={mapState}
               width="100%"
@@ -38,43 +38,41 @@ export default function Contacts() {
             >
               <Placemark geometry={mapState.center} />
             </Map>
-          </YMaps>
-        </div>
-
-        <div className="w-full xl:w-1/2 bg-white rounded-[30px] border border-blue-200 p-5 md:p-6 flex flex-col justify-between">
-          <div>
-            <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-gray-900">{t("address")}</h3>
-
-            <div className="bg-middleBlue text-white rounded-full py-3 px-4 md:px-6 flex items-center gap-3 mb-3 md:mb-4 w-full">
-              <img src={locationIcon} alt="location" className="w-5 h-5 md:w-6 md:h-6 brightness-0 invert shrink-0" />
-              <span className="font-medium text-xs md:text-base truncate">
-                {t("clinic_address")}
-              </span>
-            </div>
-
-            <div className="bg-middleBlue text-white rounded-full py-3 px-4 md:px-6 flex items-center gap-3 mb-6 md:mb-8 w-full">
-              <img src={phoneIcon} alt="phone" className="w-5 h-5 md:w-6 md:h-6 brightness-0 invert shrink-0" />
-              <span className="font-medium text-xs md:text-base">+998 99 442 50 80</span>
-            </div>
           </div>
 
-          <div className="flex flex-col md:flex-row gap-6 items-end">
-            <div className="w-full md:w-5/12 hidden md:block">
-              <img
-                src={hospitalImg}
-                alt="Hospital"
-                className="w-full h-auto object-cover rounded-xl"
-              />
+          <div className="w-full xl:w-1/2 bg-white rounded-[30px] border border-blue-200 p-5 md:p-6 flex flex-col justify-between">
+            <div>
+              <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-gray-900">{t("address")}</h3>
+
+              <div className="bg-middleBlue text-white rounded-full py-3 px-4 md:px-6 flex items-center gap-3 mb-3 md:mb-4 w-full">
+                <img src={locationIcon} alt="location" className="w-5 h-5 md:w-6 md:h-6 brightness-0 invert shrink-0" />
+                <span className="font-medium text-xs md:text-base truncate">
+                  {t("clinic_address")}
+                </span>
+              </div>
+
+              <div className="bg-middleBlue text-white rounded-full py-3 px-4 md:px-6 flex items-center gap-3 mb-6 md:mb-8 w-full">
+                <img src={phoneIcon} alt="phone" className="w-5 h-5 md:w-6 md:h-6 brightness-0 invert shrink-0" />
+                <span className="font-medium text-xs md:text-base">+998 99 442 50 80</span>
+              </div>
             </div>
-            
-            <div
-              className="w-full md:hidden mb-4 h-[200px] rounded-xl overflow-hidden relative z-0 border border-blue-100"
-              onWheel={(event) => {
-                event.preventDefault();
-                event.stopPropagation();
-              }}
-            >
-              <YMaps>
+
+            <div className="flex flex-col md:flex-row gap-6 items-end">
+              <div className="w-full md:w-5/12 hidden md:block">
+                <img
+                  src={hospitalImg}
+                  alt="Hospital"
+                  className="w-full h-auto object-cover rounded-xl"
+                />
+              </div>
+              
+              <div
+                className="w-full md:hidden mb-4 h-[200px] rounded-xl overflow-hidden relative z-0 border border-blue-100"
+                // onWheel={(event) => {
+                //   event.preventDefault();
+                //   event.stopPropagation();
+                // }}
+              >
                 <Map
                   defaultState={mapState}
                   width="100%"
@@ -85,24 +83,24 @@ export default function Contacts() {
                 >
                   <Placemark geometry={mapState.center} />
                 </Map>
-              </YMaps>
-            </div>
+              </div>
 
-            <div className="w-full md:w-7/12 flex flex-col pb-2">
-              <p className="text-gray-600 mb-6 text-sm md:text-base leading-relaxed">
-                {t("contact_description")}
-              </p>
-              <a 
-                href="tel:+998994425080"
-                className="bg-middleBlue text-white py-3 px-6 rounded-full flex items-center justify-center gap-2 font-medium cursor-pointer hover:bg-opacity-90 transition-opacity"
-              >
-                {t("call_clinic")}
-                <img src={phoneIcon} alt="phone" className="w-5 h-5 brightness-0 invert" />
-              </a>
+              <div className="w-full md:w-7/12 flex flex-col pb-2">
+                <p className="text-gray-600 mb-6 text-sm md:text-base leading-relaxed">
+                  {t("contact_description")}
+                </p>
+                <a 
+                  href="tel:+998994425080"
+                  className="bg-middleBlue text-white py-3 px-6 rounded-full flex items-center justify-center gap-2 font-medium cursor-pointer hover:bg-opacity-90 transition-opacity"
+                >
+                  {t("call_clinic")}
+                  <img src={phoneIcon} alt="phone" className="w-5 h-5 brightness-0 invert" />
+                </a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </YMaps>
     </section>
   );
 }
