@@ -45,19 +45,19 @@ export default function Hero() {
 
         <div className="flex-1 flex flex-col items-center justify-start pt-4 md:pt-2 relative z-10 pb-24 md:pb-0">
            <div className="relative z-20 mt-4 md:mt-0">
-             <img src={logo_vertical} alt="Pets" className="h-[140px] sm:h-[180px] md:h-[280px] object-contain" />
+             <img src={logo_vertical} alt="Pets" className="h-[140px] sm:h-[180px] md:h-[220px] 2xl:h-[280px] object-contain" />
            </div>
 
            <div className="text-center -mt-2 md:-mt-4 flex flex-col items-center relative z-20 px-4">
-             <h1 className="text-white text-2xl sm:text-3xl md:text-5xl font-bold font-poppins tracking-wide leading-tight">
+             <h1 className="text-white text-2xl sm:text-3xl md:text-4xl 2xl:text-5xl font-bold font-poppins tracking-wide leading-tight">
                {t('when_pet_needs_help')}
              </h1>
                <img 
                  src={logo_text} 
                  alt="" 
-                 className="w-56 sm:w-64 md:w-80"
+                 className="w-56 sm:w-64 md:w-72 2xl:w-80"
                />
-             <p className="text-white text-base sm:text-lg md:text-3xl font-poppins font-semibold tracking-wide">
+             <p className="text-white text-base sm:text-lg md:text-2xl 2xl:text-3xl font-poppins font-semibold tracking-wide">
                {t('help_any_situation')}
              </p>
            </div>
