@@ -1,6 +1,5 @@
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
-import arrow from '../assets/icons/arrow.svg';
 import light_arrow from '../assets/icons/light_arrow.svg';
 import ticks from '../assets/icons/ticks.svg';
 import dog from '../assets/images/dog.png';
