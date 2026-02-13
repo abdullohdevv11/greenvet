@@ -20,7 +20,7 @@ export default function Contacts() {
       <SectionTitle title={t("contacts")} subtitle={t("contact_anytime")} />
 
       <YMaps query={{ lang: "ru_RU" }}>
-        <div className="mt-8 flex flex-col xl:flex-row gap-6">
+        <div className="mt-8 flex flex-col xl:flex-row xl:items-start gap-6">
           <div
             className="hidden md:block w-full xl:w-1/2 h-[300px] md:h-[400px] xl:h-auto min-h-[300px] md:min-h-[400px] rounded-[30px] overflow-hidden border border-blue-100 relative z-0"
             data-lenis-prevent
