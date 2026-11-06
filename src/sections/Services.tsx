@@ -77,7 +77,7 @@ export default function Services() {
         </div>
 
         <div className="flex flex-col gap-4 md:gap-6">
-          <div className="relative overflow-hidden rounded-[30px] bg-gradient-to-br from-middleBlue to-[#ABC5FD] p-6 text-white min-h-[220px] md:min-h-[300px] flex flex-col">
+          <div className="relative overflow-hidden rounded-[30px] bg-gradient-to-br from-middleBlue to-[#C1E7D1] p-6 text-white min-h-[220px] md:min-h-[300px] flex flex-col">
             <h3 className="text-xl md:text-[30px] font-bold font-rounded leading-tight">
               {t('inpatient_care')}
             </h3>
@@ -110,7 +110,7 @@ export default function Services() {
             </div>
           </div>
 
-          <div className="relative overflow-hidden rounded-[30px] bg-gradient-to-br from-middleBlue to-[#ABC5FD] p-6 min-h-[220px] md:min-h-[300px] flex flex-col">
+          <div className="relative overflow-hidden rounded-[30px] bg-gradient-to-br from-middleBlue to-[#C1E7D1] p-6 min-h-[220px] md:min-h-[300px] flex flex-col">
             <h3 className="text-2xl md:text-[40px] font-bold font-rounded text-white leading-tight">
               {t('prevention')}
             </h3>
@@ -132,7 +132,7 @@ export default function Services() {
 
         <div className="relative rounded-[30px] border border-middleBlue bg-white p-6 pr-28 sm:pr-32 md:pr-[220px] min-h-[400px] md:min-h-[300px] flex flex-col">
           <div className="relative z-10">
-            <p className="text-darkBlue font-rounded font-bold text-3xl md:text-[40px]">MyVet.uz</p>
+            <p className="text-darkBlue font-rounded font-bold text-3xl md:text-[40px]">Green Vet</p>
             <h3 className="text-black text-2xl md:text-[30px] font-bold font-rounded mt-1">
               {t('everything_about_visit')}
             </h3>

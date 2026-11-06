@@ -34,7 +34,7 @@ export default function Appointment() {
                         </button>
                     </div>
                     
-                    <div className="absolute bottom-0 right-10 w-[150px] md:w-[200px] h-[150px] md:h-[175px] bg-[#DEEFFE] rounded-full blur-[40px] md:blur-[60px] opacity-40 z-0"></div>
+                    <div className="absolute bottom-0 right-10 w-[150px] md:w-[200px] h-[150px] md:h-[175px] bg-[#E6F6ED] rounded-full blur-[40px] md:blur-[60px] opacity-40 z-0"></div>
 
                     <div className="absolute right-[-10px] md:right-[-20px] top-[60%] md:top-1/2 -translate-y-1/3 h-[70%] md:h-[90%] w-[40%] md:w-[45%] flex items-center justify-center pointer-events-none">
                          <img 

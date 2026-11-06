@@ -22,7 +22,7 @@ export default function Contacts() {
       <YMaps query={{ lang: "ru_RU" }}>
         <div className="mt-8 flex flex-col xl:flex-row gap-6">
           <div
-            className="hidden md:block w-full xl:w-1/2 h-[300px] md:h-[400px] xl:h-auto min-h-[300px] md:min-h-[400px] rounded-[30px] overflow-hidden border border-blue-100 relative z-0"
+            className="hidden md:block w-full xl:w-1/2 h-[300px] md:h-[400px] xl:h-auto min-h-[300px] md:min-h-[400px] rounded-[30px] overflow-hidden border border-[#E4F5EB] relative z-0"
             onWheel={(event) => {
               event.stopPropagation();
             }}
@@ -39,7 +39,7 @@ export default function Contacts() {
             </Map>
           </div>
 
-          <div className="w-full xl:w-1/2 bg-white rounded-[30px] border border-blue-200 p-5 md:p-6 flex flex-col justify-between">
+          <div className="w-full xl:w-1/2 bg-white rounded-[30px] border border-[#D0EDDC] p-5 md:p-6 flex flex-col justify-between">
             <div>
               <h3 className="hidden md:block text-xl md:text-2xl font-bold mb-4 md:mb-6 text-gray-900">{t("address")}</h3>
 
@@ -76,7 +76,7 @@ export default function Contacts() {
               </div>
               
               <div
-                className="w-full md:hidden mb-4 h-[200px] rounded-xl overflow-hidden relative z-0 border border-blue-100"
+                className="w-full md:hidden mb-4 h-[200px] rounded-xl overflow-hidden relative z-0 border border-[#E4F5EB]"
                 onWheel={(event) => {
                   event.stopPropagation();
                 }}

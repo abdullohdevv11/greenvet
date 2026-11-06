@@ -6,16 +6,18 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        rounded: ['"M PLUS Rounded 1c"',"system-ui", "sans-serif"],
+        sans: ['"Manrope"', "system-ui", "sans-serif"],
+        rounded: ['"Manrope"', "system-ui", "sans-serif"],
         oooh: ['"Oooh Baby"', "cursive"],
-        poppins: ['"Poppins"', "sans-serif"],
-        shantell: ['"Shantell Sans"', "cursive"],
+        poppins: ['"Manrope"', "system-ui", "sans-serif"],
+        shantell: ['"Manrope"', "system-ui", "sans-serif"],
       },
+      // Green Vet logo colors (names kept so components are unchanged)
       colors: {
-        lightBlue: "#A2D3FC",
-        lightBlue2: "#BCDFFF",
-        darkBlue: "#3B89F6",
-        middleBlue: "#578AFF",
+        lightBlue: "#B9E5CB",
+        lightBlue2: "#CEEDDB",
+        darkBlue: "#2F3264",
+        middleBlue: "#257345",
       },
     },
   },

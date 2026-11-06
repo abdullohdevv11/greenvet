@@ -23,7 +23,7 @@ export default function Specialists() {
       <div className="mt-8 md:mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
         {specialists.map((doctor) => (
           <div key={doctor.id} className="flex flex-col items-center w-full max-w-[400px]">
-            <div className="relative w-[320px] h-[320px] rounded-full bg-[#BFE0FF] flex items-end justify-center overflow-hidden mb-8 group">
+            <div className="relative w-[320px] h-[320px] rounded-full bg-[#D1EDDC] flex items-end justify-center overflow-hidden mb-8 group">
               <img 
                 src={doctor.image} 
                 alt={doctor.name}

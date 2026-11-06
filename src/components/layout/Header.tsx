@@ -1,6 +1,6 @@
 import LanguageSwitcher from '../LanguageSwitcher';
 import { useTranslation } from 'react-i18next';
-import logo_main from "../../assets/icons/logo_main.svg"
+import greenVetLogo from "../../assets/images/green_vet_logo.png"
 
 export default function Header() {
     const { t } = useTranslation();
@@ -12,11 +12,8 @@ export default function Header() {
     return (
         <div className="relative flex flex-col md:flex-row items-center justify-between px-4 md:px-6 py-4 gap-4 md:gap-0 w-full z-50">
             <div className="flex items-center justify-between w-full md:w-auto gap-4">
-                <div className="flex items-center gap-3 md:gap-4">
-                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-darkBlue flex items-center justify-center p-2.5 md:p-3">
-                        <img src={logo_main} alt="logo" className="w-full h-full object-contain" />
-                    </div>
-                    <p className="text-white text-xl md:text-2xl font-oooh mt-2">MyVet</p>
+                <div className="flex items-center">
+                    <img src={greenVetLogo} alt="Green Vet" className="h-9 md:h-10 lg:h-12 w-auto object-contain" />
                 </div>
 
                 <div className="md:hidden">
