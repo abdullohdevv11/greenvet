@@ -1,8 +1,7 @@
+import Header from './components/layout/Header';
 import Hero from './sections/Hero';
-import Appointment from './sections/Appointment';
 import Services from './sections/Services';
 import ClinicInfo from './sections/ClinicInfo';
-import Specialists from './sections/Specialists';
 import Contacts from './sections/Contacts';
 import Footer from './components/layout/Footer';
 import { useEffect } from 'react';
@@ -25,14 +24,15 @@ function App() {
   }, []);
 
   return (
-    <div>
-      <Hero />
-      <Appointment/>
-      <Services/>
-      <Specialists/>
-      <ClinicInfo/>
-      <Contacts/>
-      <Footer/>
+    <div className="min-h-screen bg-paper text-ink">
+      <Header />
+      <main>
+        <Hero />
+        <Services />
+        <ClinicInfo />
+        <Contacts />
+      </main>
+      <Footer />
     </div>
   )
 }
