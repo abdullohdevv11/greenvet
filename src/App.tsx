@@ -1,6 +1,7 @@
 import Header from './components/layout/Header';
 import Hero from './sections/Hero';
 import Services from './sections/Services';
+import Team from './sections/Team';
 import ClinicInfo from './sections/ClinicInfo';
 import Contacts from './sections/Contacts';
 import Footer from './components/layout/Footer';
@@ -29,6 +30,7 @@ function App() {
       <main>
         <Hero />
         <Services />
+        <Team />
         <ClinicInfo />
         <Contacts />
       </main>
