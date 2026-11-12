@@ -32,9 +32,14 @@ export default function PillButton({
   );
 
   const cls = cn("group inline-flex items-center cursor-pointer", className);
+  const external = href?.startsWith("http");
 
   return href ? (
-    <a href={href} target="_blank" rel="noopener noreferrer" className={cls}>
+    <a
+      href={href}
+      className={cls}
+      {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+    >
       {inner}
     </a>
   ) : (

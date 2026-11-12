@@ -1,10 +1,11 @@
 import { useTranslation } from 'react-i18next';
-import { Star } from 'lucide-react';
+import { Clock } from 'lucide-react';
 import heroDog from '../assets/images/hero-dog.jpg';
 import heroCat from '../assets/images/hero-cat.jpg';
 import Container from '../components/ui/Container';
 import PillButton from '../components/ui/PillButton';
 import { Eyebrow, Heading } from '../components/ui/Heading';
+import { MAIN_PHONE } from '../data/contacts';
 
 export default function Hero() {
   const { t } = useTranslation();
@@ -12,7 +13,7 @@ export default function Hero() {
   return (
     <section id="top" className="pt-12 md:pt-20">
       <Container>
-        <Eyebrow>{t('available_247')}</Eyebrow>
+        <Eyebrow>{t('clinic_tagline')}</Eyebrow>
         <Heading
           as="h1"
           text={t('when_pet_needs_help')}
@@ -20,19 +21,20 @@ export default function Hero() {
         />
 
         <div className="mt-12 md:mt-16 grid grid-cols-1 md:grid-cols-[1.5fr_1fr] lg:grid-cols-[1.9fr_1fr] gap-4 md:gap-5">
-          <div className="relative rounded-[28px] bg-white overflow-hidden h-[300px] min-[400px]:h-[340px] sm:h-[420px] lg:h-[500px] xl:h-[560px] ">
+          <div className="relative rounded-[28px] bg-white overflow-hidden h-[300px] min-[400px]:h-[340px] sm:h-[420px] lg:h-[500px] xl:h-[560px]">
             <img
               src={heroCat}
               alt="Cat"
               className="absolute inset-0 h-full w-full object-cover object-[50%_30%] lg:inset-auto lg:top-0 lg:left-1/2 lg:-translate-x-1/2 lg:h-[125%] lg:w-auto lg:max-w-none lg:object-contain"
             />
-            <div className="absolute z-10 right-4 top-4 md:right-6 md:top-6 lg:right-auto lg:left-6 rounded-2xl bg-paper px-4 py-3">
-              <div className="flex items-center gap-0.5 text-ink">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="h-3.5 w-3.5 fill-current" />
-                ))}
+            <div className="absolute z-10 right-4 top-4 md:right-6 md:top-6 lg:right-auto lg:left-6 rounded-2xl bg-paper px-4 py-3 flex items-center gap-3">
+              <span className="h-9 w-9 rounded-full bg-mint flex items-center justify-center">
+                <Clock className="h-4 w-4 text-brand-dark" />
+              </span>
+              <div>
+                <p className="text-sm font-semibold text-ink">{t('hero_badge')}</p>
+                <p className="text-xs text-muted">{t('open_247')}</p>
               </div>
-              <p className="mt-1 text-sm font-medium text-ink">{t('rating_text')}</p>
             </div>
           </div>
 
@@ -50,9 +52,15 @@ export default function Hero() {
               <p className="mt-2 text-sm md:text-base text-muted leading-relaxed max-w-sm">
                 {t('comprehensive_care')}
               </p>
-              <PillButton href="https://t.me/ContactMyVet" className="mt-6">
-                {t('book_visit')}
-              </PillButton>
+              <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3">
+                <PillButton href={`tel:${MAIN_PHONE.tel}`}>{t('book_visit')}</PillButton>
+                <a
+                  href={`tel:${MAIN_PHONE.tel}`}
+                  className="text-sm font-semibold text-ink hover:text-brand transition-colors whitespace-nowrap"
+                >
+                  {MAIN_PHONE.display}
+                </a>
+              </div>
             </div>
           </div>
         </div>
