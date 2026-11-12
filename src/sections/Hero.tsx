@@ -20,7 +20,38 @@ export default function Hero() {
           className="mt-5 max-w-3xl text-[34px] min-[400px]:text-[40px] sm:text-6xl lg:text-[72px] xl:text-[80px]"
         />
 
-        <div className="mt-12 md:mt-16 grid grid-cols-1 md:grid-cols-[1.5fr_1fr] lg:grid-cols-[1.9fr_1fr] gap-4 md:gap-5">
+        {/* Mobile: two portrait photos side by side, nothing cropped awkwardly */}
+        <div className="md:hidden mt-10">
+          <div className="grid grid-cols-2 gap-3">
+            <div className="relative aspect-[3/4] rounded-[24px] bg-white overflow-hidden">
+              <img src={heroCat} alt="Cat" className="absolute inset-0 h-full w-full object-cover object-top" />
+            </div>
+            <div className="relative aspect-[3/4] rounded-[24px] bg-white overflow-hidden">
+              <img src={heroDog} alt="Dog" className="absolute inset-0 h-full w-full object-cover object-[30%_70%]" />
+            </div>
+          </div>
+
+          <div className="mt-3 flex items-center gap-3 rounded-2xl bg-white px-4 py-3">
+            <span className="h-9 w-9 shrink-0 rounded-full bg-mint flex items-center justify-center">
+              <Clock className="h-4 w-4 text-brand-dark" />
+            </span>
+            <div>
+              <p className="text-sm font-semibold text-ink">{t('hero_badge')}</p>
+              <p className="text-xs text-muted">{t('open_247')}</p>
+            </div>
+          </div>
+
+          <p className="mt-7 text-lg font-medium text-ink">{t('help_any_situation')}</p>
+          <p className="mt-2 text-sm text-muted leading-relaxed">{t('comprehensive_care')}</p>
+          <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3">
+            <PillButton href={`tel:${MAIN_PHONE.tel}`}>{t('book_visit')}</PillButton>
+            <a href={`tel:${MAIN_PHONE.tel}`} className="text-sm font-semibold text-ink whitespace-nowrap">
+              {MAIN_PHONE.display}
+            </a>
+          </div>
+        </div>
+
+        <div className="hidden md:grid mt-16 md:grid-cols-[1.5fr_1fr] lg:grid-cols-[1.9fr_1fr] gap-4 md:gap-5">
           <div className="relative rounded-[28px] bg-white overflow-hidden h-[300px] min-[400px]:h-[340px] sm:h-[420px] lg:h-[500px] xl:h-[560px]">
             <img
               src={heroCat}

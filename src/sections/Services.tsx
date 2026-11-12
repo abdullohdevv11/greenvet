@@ -118,11 +118,11 @@ export default function Services() {
           </div>
 
           <div className="flex flex-col gap-4 md:gap-5">
-            <div className="relative rounded-[28px] bg-[#FDFDFD] overflow-hidden h-[380px] sm:h-[460px] lg:h-auto lg:flex-1 lg:min-h-[560px]">
+            <div className="relative rounded-[28px] bg-[#FDFDFD] overflow-hidden aspect-[2/3] sm:aspect-auto sm:h-[520px] lg:h-auto lg:flex-1 lg:min-h-[560px]">
               <img
                 src={petsGroup}
                 alt="Dog and cats"
-                className="absolute inset-0 h-full w-full object-cover object-[50%_60%]"
+                className="absolute inset-0 h-full w-full object-cover sm:object-contain lg:object-cover object-[50%_60%]"
               />
             </div>
 

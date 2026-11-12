@@ -94,16 +94,6 @@ export default function Header() {
                         </nav>
 
                         <div className="flex items-center gap-2">
-                            <a
-                                href={`tel:${MAIN_PHONE.tel}`}
-                                className="hidden xl:inline-flex items-center gap-2 px-2 text-sm font-semibold text-ink hover:text-brand transition-colors whitespace-nowrap"
-                            >
-                                <span className="relative flex h-2 w-2">
-                                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand opacity-60" />
-                                    <span className="relative inline-flex h-2 w-2 rounded-full bg-brand" />
-                                </span>
-                                {MAIN_PHONE.display}
-                            </a>
                             <LanguageSwitcher />
                             <a
                                 href={`tel:${MAIN_PHONE.tel}`}
