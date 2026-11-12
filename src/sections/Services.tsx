@@ -1,169 +1,151 @@
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
-import light_arrow from '../assets/icons/light_arrow.svg';
-import ticks from '../assets/icons/ticks.svg';
-import dog from '../assets/images/dog.png';
-import dog_with_cat from '../assets/images/dog_wth_cat.png';
-import blue_icon from '../assets/icons/blue_icon.svg';
-import black_tick from '../assets/icons/black_tick.svg';
-import SectionTitle from '../components/ui/SectionTitle';
+import { AnimatePresence, motion } from 'framer-motion';
+import {
+  Plus, Minus, Stethoscope, Scissors, Microscope, BedDouble, ShieldCheck, ArrowUpRight,
+  type LucideIcon,
+} from 'lucide-react';
+import petsGroup from '../assets/images/pets-group.jpg';
+import Container from '../components/ui/Container';
 import PriceModal from '../components/ui/PriceModal';
 import ReviewsModal from '../components/ui/ReviewsModal';
+import PillButton from '../components/ui/PillButton';
+import { Eyebrow, Heading } from '../components/ui/Heading';
 import { prices } from '../data/prices';
+import { cn } from '../utils/cn';
 
-const TelegramIcon = ({ className }: { className?: string }) => (
-  <svg 
-    width="24" 
-    height="24" 
-    viewBox="0 0 24 24" 
-    fill="none" 
-    xmlns="http://www.w3.org/2000/svg"
-    className={className}
-  >
-    <path 
-      d="M20.665 3.717L2.935 10.554C2.044 10.908 2.051 11.405 2.775 11.626L7.327 13.046L17.859 6.401C18.357 6.098 18.815 6.262 18.441 6.595L9.907 14.296L9.882 14.293L9.593 18.985C10.016 18.985 10.203 18.793 10.439 18.567L13.211 15.875L17.81 19.272C18.658 19.739 19.268 19.5 19.479 18.489L22.498 4.261C22.807 3.022 22.025 2.458 20.665 3.717Z" 
-      fill="currentColor"
-    />
-  </svg>
-);
+type Item = {
+  title: string;
+  icon: LucideIcon;
+  color: string;
+  desc?: string;
+  list?: string[];
+  priceKey?: string;
+};
+
+const items: Item[] = [
+  { title: 'vaccination_title', icon: Stethoscope, color: 'bg-sun', desc: 'vaccination_subtitle' },
+  { title: 'spaying_title', icon: Scissors, color: 'bg-lilac', desc: 'spaying_subtitle', priceKey: 'spaying_neutering' },
+  { title: 'diagnostics', icon: Microscope, color: 'bg-sky', list: ['ultrasound', 'blood_tests', 'xray'], priceKey: 'diagnostics' },
+  { title: 'inpatient_care', icon: BedDouble, color: 'bg-peach', list: ['care_247', 'vet_supervision', 'around_clock'] },
+  { title: 'prevention', icon: ShieldCheck, color: 'bg-mint', desc: 'prevention_desc' },
+];
 
 export default function Services() {
   const { t } = useTranslation();
+  const [open, setOpen] = useState(0);
   const [selectedService, setSelectedService] = useState<string | null>(null);
   const [isReviewsModalOpen, setIsReviewsModalOpen] = useState(false);
 
   return (
-    <section className="mt-8 md:mt-[60px] px-4 md:px-6">
-      <SectionTitle title={t('our_services')} />
+    <section id="services" className="mt-24 md:mt-36 scroll-mt-28">
+      <Container>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-8">
+          <div className="flex flex-col">
+            <Eyebrow>{t('our_services')}</Eyebrow>
+            <Heading
+              text={t('comprehensive_care')}
+              className="mt-5 max-w-lg text-[28px] sm:text-4xl lg:text-[44px]"
+            />
 
-      <div className="grid grid-cols-1 xl:grid-cols-[1.2fr_1fr_1fr] gap-4 md:gap-[20px] mt-6">
-        <div className="relative overflow-hidden rounded-[30px] border border-darkBlue bg-white p-6 md:p-8 min-h-[350px] md:min-h-[400px] xl:min-h-[500px] flex flex-col">
-          <button 
-            onClick={() => setSelectedService('diagnostics')}
-            className="absolute top-6 right-6 w-10 h-10 md:w-12 md:h-12 rounded-full bg-middleBlue flex items-center justify-center cursor-pointer z-20"
-          >
-            <img src={light_arrow} alt="arrow" className="w-4 h-4 md:w-5 md:h-5" />
-          </button>
-          <h3 className="text-black text-2xl md:text-[40px] font-bold font-rounded">
-            {t('diagnostics')}
-          </h3>
-          <ul className="mt-6 space-y-3 text-lg md:text-[30px] font-poppins font-regular text-black relative z-10 mb-8">
-            <li className="flex items-center gap-3">
-              <img src={black_tick} alt="tick" className="w-5 h-5 md:w-6 md:h-6" />
-              {t('ultrasound')}
-            </li>
-            <li className="flex items-center gap-3">
-              <img src={black_tick} alt="tick" className="w-5 h-5 md:w-6 md:h-6" />
-              {t('blood_tests')}
-            </li>
-            <li className="flex items-center gap-3">
-              <img src={black_tick} alt="tick" className="w-5 h-5 md:w-6 md:h-6" />
-              {t('xray')}
-            </li>
-          </ul>
-          <button 
-            onClick={() => window.open('https://t.me/myvetuz', '_blank')}
-            className="mt-auto self-start bg-middleBlue text-white font-bold font-poppins py-2 px-6 md:py-3 md:px-8 text-xs md:text-base rounded-full cursor-pointer hover:bg-opacity-90 transition-opacity z-10 flex items-center gap-2"
-          >
-            {t('learn_more')}
-            <TelegramIcon className="w-4 h-4 md:w-5 md:h-5" />
-          </button>
-          <div className="absolute bottom-10 right-10 w-[150px] md:w-[372px] h-[150px] md:h-[250px] bg-darkBlue rounded-full blur-[40px] md:blur-[60px] opacity-30 z-0"></div>
-          <img
-            src={blue_icon}
-            alt="paw"
-            className="absolute -bottom-25 -right-25 md:-bottom-35 md:-right-35 w-[300px] md:w-[483px] opacity-50 rotate-[265deg] z-0"
-          />
-        </div>
+            <ul className="mt-10 lg:mt-auto lg:pt-12 space-y-3">
+              {items.map((item, i) => {
+                const isOpen = open === i;
+                const Icon = item.icon;
+                return (
+                  <li key={item.title} className="rounded-2xl bg-white">
+                    <button
+                      onClick={() => setOpen(isOpen ? -1 : i)}
+                      className="w-full flex items-center gap-3 sm:gap-4 p-4 md:p-5 text-left cursor-pointer"
+                      aria-expanded={isOpen}
+                    >
+                      <span className={cn('h-10 w-10 rounded-full flex items-center justify-center shrink-0', item.color)}>
+                        <Icon className="h-4 w-4 text-ink" />
+                      </span>
+                      <span className="flex-1 font-medium text-ink text-[15px] sm:text-base md:text-lg leading-snug">{t(item.title)}</span>
+                      <span className="h-8 w-8 rounded-full bg-ink text-white flex items-center justify-center shrink-0">
+                        {isOpen ? <Minus className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
+                      </span>
+                    </button>
 
-        <div className="flex flex-col gap-4 md:gap-6">
-          <div className="relative overflow-hidden rounded-[30px] bg-gradient-to-br from-middleBlue to-[#C1E7D1] p-6 text-white min-h-[220px] md:min-h-[300px] flex flex-col">
-            <h3 className="text-xl md:text-[30px] font-bold font-rounded leading-tight">
-              {t('inpatient_care')}
-            </h3>
-            <ul className="mt-4 space-y-2 text-sm md:text-base font-bold font-rounded mb-8">
-              <li className="flex items-center gap-3">
-                <img src={ticks} alt="tick" className="w-4 h-4 md:w-5 md:h-5" />
-                {t('care_247')}
-              </li>
-              <li className="flex items-center gap-3">
-                <img src={ticks} alt="tick" className="w-4 h-4 md:w-5 md:h-5" />
-                {t('vet_supervision')}
-              </li>
-              <li className="flex items-center gap-3">
-                <img src={ticks} alt="tick" className="w-4 h-4 md:w-5 md:h-5" />
-                {t('around_clock')}
-              </li>
+                    <AnimatePresence initial={false}>
+                      {isOpen && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: 'auto', opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.25, ease: 'easeOut' }}
+                          className="overflow-hidden"
+                        >
+                          <div className="px-4 md:px-5 pb-5 sm:pl-[72px] md:pl-[76px]">
+                            {item.desc && (
+                              <p className="text-sm md:text-base text-muted leading-relaxed">{t(item.desc)}</p>
+                            )}
+                            {item.list && (
+                              <p className="text-sm md:text-base text-muted">
+                                {item.list.map((k) => t(k)).join(' · ')}
+                              </p>
+                            )}
+                            <div className="mt-4 flex flex-wrap gap-4 text-sm font-medium">
+                              {item.priceKey && (
+                                <button
+                                  onClick={() => setSelectedService(item.priceKey!)}
+                                  className="underline underline-offset-4 decoration-ink/30 hover:text-brand hover:decoration-brand transition-colors cursor-pointer"
+                                >
+                                  {t('calculate_cost')}
+                                </button>
+                              )}
+                              <a
+                                href="https://t.me/myvetuz"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-1 hover:text-brand transition-colors"
+                              >
+                                {t('book_vet_consultation')}
+                                <ArrowUpRight className="h-4 w-4" />
+                              </a>
+                            </div>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </li>
+                );
+              })}
             </ul>
-
-            <button 
-                onClick={() => window.open('https://t.me/myvetuz', '_blank')}
-                className="mt-auto self-start bg-white text-middleBlue font-bold font-poppins py-2 px-6 md:py-3 md:px-8 text-xs md:text-base rounded-full cursor-pointer hover:bg-opacity-90 transition-opacity z-10 flex items-center gap-2"
-            >
-                {t('learn_more')}
-                <TelegramIcon className="w-4 h-4 md:w-5 md:h-5" />
-            </button>
-
-            <div className="absolute right-6 bottom-0 w-32 h-32 md:w-40 md:h-40 opacity-20">
-              <div className="absolute left-1/2 top-0 -translate-x-1/2 w-8 md:w-10 h-32 md:h-40 bg-white"></div>
-              <div className="absolute top-1/2 left-0 -translate-y-1/2 h-8 md:h-10 w-32 md:w-40 bg-white"></div>
-            </div>
           </div>
 
-          <div className="relative overflow-hidden rounded-[30px] bg-gradient-to-br from-middleBlue to-[#C1E7D1] p-6 min-h-[220px] md:min-h-[300px] flex flex-col">
-            <h3 className="text-2xl md:text-[40px] font-bold font-rounded text-white leading-tight">
-              {t('prevention')}
-            </h3>
-            <p className="text-xs md:text-base font-rounded font-bold text-white/90 mt-4 max-w-[80%] mb-8">
-              {t('prevention_desc')}
-            </p>
-            
-            <button 
-                onClick={() => window.open('https://t.me/myvetuz', '_blank')}
-                className="mt-auto self-start bg-white text-middleBlue font-bold font-poppins py-2 px-6 md:py-3 md:px-8 text-xs md:text-base rounded-full cursor-pointer hover:bg-opacity-90 transition-opacity z-10 flex items-center gap-2"
-            >
-                {t('learn_more')}
-                <TelegramIcon className="w-4 h-4 md:w-5 md:h-5" />
-            </button>
-
-            <img src={dog_with_cat} alt="dog" className="absolute bottom-0 right-4 md:right-6 w-[80px] md:w-[140px] object-contain z-0" />
+          <div className="relative rounded-[28px] bg-[#FDFDFD] overflow-hidden h-[380px] sm:h-[460px] lg:h-auto lg:min-h-[640px]">
+            <img
+              src={petsGroup}
+              alt="Dog and cats"
+              className="absolute inset-0 h-full w-full object-cover object-[50%_60%]"
+            />
           </div>
         </div>
 
-        <div className="relative rounded-[30px] border border-middleBlue bg-white p-6 pr-28 sm:pr-32 md:pr-[220px] min-h-[400px] md:min-h-[300px] flex flex-col">
-          <div className="relative z-10">
-            <p className="text-darkBlue font-rounded font-bold text-3xl md:text-[40px]">Green Vet</p>
-            <h3 className="text-black text-2xl md:text-[30px] font-bold font-rounded mt-1">
-              {t('everything_about_visit')}
-            </h3>
+        {/* Facts strip */}
+        <div className="mt-5 rounded-[28px] bg-white p-6 md:p-10 grid grid-cols-1 xl:grid-cols-[1.1fr_2fr] gap-8 items-center">
+          <div>
+            <p className="text-2xl md:text-3xl font-medium tracking-tight">{t('everything_about_visit')}</p>
+            <p className="mt-3 text-muted leading-relaxed">{t('no_rush')}</p>
+            <PillButton onClick={() => setIsReviewsModalOpen(true)} className="mt-6">
+              {t('read_reviews')}
+            </PillButton>
           </div>
-          <p className="text-sm md:text-base font-rounded font-bold text-gray-700 mt-4 relative z-10">
-            {t('no_rush')}
-          </p>
-          <ul className="mt-4 space-y-2 text-sm md:text-base font-rounded font-bold text-black relative z-10">
-            <li className="flex items-center gap-3">
-              <span className="text-middleBlue text-xl">★</span>
-              {t('rating_text')}
-            </li>
-            <li className="flex items-center gap-3">
-              <span className="text-middleBlue text-xl">★</span>
-              {t('trusted_clients')}
-            </li>
-            <li className="flex items-center gap-3">
-              <span className="text-middleBlue text-xl">★</span>
-              {t('certified_vets')}
-            </li>
+          <ul className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            {[
+              { k: 'rating_text', c: 'bg-sun' },
+              { k: 'trusted_clients', c: 'bg-lilac' },
+              { k: 'certified_vets', c: 'bg-mint' },
+            ].map(({ k, c }) => (
+              <li key={k} className={cn('rounded-2xl p-5 min-h-[72px] sm:min-h-[120px] flex items-end text-sm sm:text-base break-words hyphens-auto font-medium text-ink leading-snug', c)}>
+                {t(k)}
+              </li>
+            ))}
           </ul>
-          <button 
-            onClick={() => setIsReviewsModalOpen(true)}
-            className="mt-auto bg-middleBlue text-white font-rounded font-bold text-sm md:text-base py-3 px-6 md:px-8 rounded-full w-fit relative z-10 cursor-pointer hover:bg-opacity-90 transition-opacity"
-          >
-            {t('read_reviews')}
-          </button>
-          <div className="absolute bottom-10 right-10 w-[150px] md:w-[200px] h-[150px] md:h-[175px] bg-darkBlue rounded-full blur-[40px] md:blur-[60px] opacity-30 z-0"></div>
-          <img src={dog} alt="dog" className="absolute bottom-[-10px] right-[-10px] md:right-0 md:bottom-[-24px] w-[140px] md:w-[300px] object-contain z-0" />
         </div>
-      </div>
+      </Container>
 
       <PriceModal
         isOpen={!!selectedService}

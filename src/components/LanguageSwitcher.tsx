@@ -54,12 +54,12 @@ export default function LanguageSwitcher() {
     <div className="relative" ref={containerRef}>
       <button
         onClick={() => setIsOpen((prev) => !prev)}
-        className="flex items-center bg-white rounded-full px-1.5 py-1.5"
+        className="flex items-center bg-white border border-line rounded-full p-1 cursor-pointer hover:border-ink/30 transition-colors"
       >
         <img
           src={currentLang.icon}
           alt={currentLang.label}
-          className="w-8 h-8 rounded-full object-cover"
+          className="w-7 h-7 rounded-full object-cover"
         />
       </button>
 
@@ -70,7 +70,7 @@ export default function LanguageSwitcher() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 10, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="absolute top-full right-0 mt-4 min-w-[120px] bg-white rounded-2xl overflow-hidden z-50 border border-gray-100"
+            className="absolute top-full right-0 mt-2 min-w-[120px] bg-white rounded-2xl overflow-hidden z-50 border border-line shadow-lg shadow-black/5"
           >
             {languages.map((lang) => (
               <button

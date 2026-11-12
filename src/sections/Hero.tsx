@@ -1,95 +1,62 @@
-import Header from '../components/layout/Header';
-import logo_vertical from '../assets/images/Logo_vetical 1 1.png';
-import cat1 from '../assets/images/cat 1.png';
-import dog1 from '../assets/images/dog 1.png';
-import { cn } from '../utils/cn';
 import { useTranslation } from 'react-i18next';
-import { useState } from 'react';
-import PriceModal from '../components/ui/PriceModal';
-import { prices } from '../data/prices';
-import green_vet_wordmark from "../assets/images/green_vet_wordmark.png"
-
-const Sparkle = ({ className }: { className?: string }) => (
-  <svg 
-    viewBox="0 0 24 24" 
-    fill="currentColor" 
-    className={cn("text-white absolute opacity-70", className)}
-    width="24" 
-    height="24"
-  >
-    <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
-  </svg>
-);
+import { Star } from 'lucide-react';
+import heroDog from '../assets/images/hero-dog.jpg';
+import heroCat from '../assets/images/hero-cat.jpg';
+import Container from '../components/ui/Container';
+import PillButton from '../components/ui/PillButton';
+import { Eyebrow, Heading } from '../components/ui/Heading';
 
 export default function Hero() {
-  const {t} = useTranslation();
-  const [selectedService, setSelectedService] = useState<string | null>(null);
-
-  const handleBookVisit = () => {
-    window.open('https://t.me/ContactMyVet', '_blank');
-  };
+  const { t } = useTranslation();
 
   return (
-    <section className="p-2 pb-[0px] md:p-6 md:pb-[0px] w-full bg-white flex justify-center">
-      <div className="bg-lightBlue2 w-full min-h-[550px] md:min-h-0 md:h-[calc(100vh-3rem)] rounded-[30px] md:rounded-[50px] relative overflow-hidden flex flex-col">
-        <Sparkle className="top-12 left-[10%] md:left-[18%] w-6 h-6 md:w-8 md:h-8 rotate-12" />
-        <Sparkle className="top-32 left-[5%] md:left-[8%] w-4 h-4 md:w-6 md:h-6 -rotate-12" />
-        <Sparkle className="top-24 right-[10%] md:right-[18%] w-8 h-8 md:w-10 md:h-10 rotate-45" />
-        <Sparkle className="bottom-48 left-[20%] md:left-[28%] w-6 h-6 md:w-8 md:h-8 rotate-12" />
-        <Sparkle className="bottom-32 right-[20%] md:right-[28%] w-4 h-4 md:w-6 md:h-6 -rotate-12" />
-        <Sparkle className="top-[60%] left-[5%] w-8 h-8 md:w-12 md:h-12 rotate-6" />
-        <Sparkle className="top-[55%] right-[8%] w-6 h-6 md:w-8 md:h-8 rotate-45" />
-        <Sparkle className="top-40 left-[45%] w-4 h-4 md:w-5 md:h-5" />
-
-        <Header />
-
-        <div className="flex-1 flex flex-col items-center justify-start pt-4 md:pt-2 relative z-10 pb-24 md:pb-0">
-           <div className="relative z-20 mt-4 md:mt-0">
-             <img src={logo_vertical} alt="Pets" className="h-[140px] sm:h-[180px] md:h-[220px] 2xl:h-[280px] object-contain" />
-           </div>
-
-           <div className="text-center -mt-2 md:-mt-4 flex flex-col items-center relative z-20 px-4 gap-2 md:gap-3">
-             <h1 className="text-white  text-2xl sm:text-3xl md:text-4xl 2xl:text-5xl font-bold font-poppins tracking-wide leading-tight">
-               {t('when_pet_needs_help')}
-             </h1>
-               <img 
-                 src={green_vet_wordmark} 
-                 alt="Green Vet" 
-                 className="w-56 sm:w-64 md:w-72 2xl:w-80"
-               />
-             <p className="text-white text-base sm:text-lg md:text-2xl 2xl:text-3xl font-poppins font-semibold tracking-wide">
-               {t('help_any_situation')}
-             </p>
-           </div>
-
-           <div className="relative mt-6 md:mt-10">
-             <button 
-               onClick={handleBookVisit}
-               className="bg-white text-black font-poppins font-bold text-xs sm:text-sm md:text-base px-6 sm:px-8 md:px-12 py-3 md:py-4 rounded-full uppercase tracking-widest cursor-pointer hover:bg-gray-100 transition-colors"
-             >
-               {t('book_visit')}
-             </button>
-           </div>
-        </div>  
-
-        <img 
-            src={cat1} 
-            alt="White Cat" 
-            className="absolute bottom-0 left-0 w-[100px] sm:w-[140px] md:w-[320px] object-contain z-10 translate-y-2 md:translate-y-8 -translate-x-2 md:-translate-x-6"
+    <section id="top" className="pt-12 md:pt-20">
+      <Container>
+        <Eyebrow>{t('available_247')}</Eyebrow>
+        <Heading
+          as="h1"
+          text={t('when_pet_needs_help')}
+          className="mt-5 max-w-3xl text-[34px] min-[400px]:text-[40px] sm:text-6xl lg:text-[72px] xl:text-[80px]"
         />
-        <img 
-            src={dog1} 
-            alt="White Dog" 
-            className="absolute bottom-0 right-0 w-[100px] sm:w-[140px] md:w-[320px] object-contain z-10 translate-y-2 md:translate-y-8 translate-x-2 md:translate-x-6"
-        />
-      </div>
 
-      <PriceModal
-        isOpen={!!selectedService}
-        onClose={() => setSelectedService(null)}
-        title={selectedService || ''}
-        items={selectedService ? prices[selectedService] || [] : []}
-      />
+        <div className="mt-12 md:mt-16 grid grid-cols-1 md:grid-cols-[1.5fr_1fr] lg:grid-cols-[1.9fr_1fr] gap-4 md:gap-5">
+          <div className="relative rounded-[28px] bg-white overflow-hidden h-[300px] min-[400px]:h-[340px] sm:h-[420px] lg:h-[500px] xl:h-[560px] ">
+            <img
+              src={heroCat}
+              alt="Cat"
+              className="absolute inset-0 h-full w-full object-cover object-[50%_30%] lg:inset-auto lg:top-0 lg:left-1/2 lg:-translate-x-1/2 lg:h-[125%] lg:w-auto lg:max-w-none lg:object-contain"
+            />
+            <div className="absolute z-10 right-4 top-4 md:right-6 md:top-6 lg:right-auto lg:left-6 rounded-2xl bg-paper px-4 py-3">
+              <div className="flex items-center gap-0.5 text-ink">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star key={i} className="h-3.5 w-3.5 fill-current" />
+                ))}
+              </div>
+              <p className="mt-1 text-sm font-medium text-ink">{t('rating_text')}</p>
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-6">
+            <div className="relative rounded-[28px] bg-white overflow-hidden h-[220px] sm:h-[260px] md:h-[220px] lg:h-[260px] xl:h-[300px]">
+              <img
+                src={heroDog}
+                alt="Dog"
+                className="absolute bottom-0 left-0 h-[135%] w-auto max-w-none object-contain object-left-bottom"
+              />
+            </div>
+
+            <div className="md:mt-auto">
+              <p className="text-lg md:text-xl font-medium text-ink">{t('help_any_situation')}</p>
+              <p className="mt-2 text-sm md:text-base text-muted leading-relaxed max-w-sm">
+                {t('comprehensive_care')}
+              </p>
+              <PillButton href="https://t.me/ContactMyVet" className="mt-6">
+                {t('book_visit')}
+              </PillButton>
+            </div>
+          </div>
+        </div>
+      </Container>
     </section>
   );
 }
